@@ -7,19 +7,19 @@
 <meta name="description" content="Графический дизайнер Асанали: логотипы, фирменный стиль и нейминг для бизнеса. Более 50 клиентов, 3 года опыта.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = { theme: { extend: {
   colors: { ink:'#0B3B2E', moss:'#14533F', paper:'#F3F6F4', fog:'#E1E9E4', amber:'#E0A15F', clay:'#9A5A17' },
-  fontFamily: { display:['Unbounded','sans-serif'], body:['Onest','sans-serif'] }
+  fontFamily: { display:['Montserrat','sans-serif'], body:['Montserrat','sans-serif'] }
 }}}
 </script>
 <style>
-  body{font-family:'Onest',sans-serif;background:#F3F6F4;color:#0B3B2E}
-  h1,h2,h3,.font-display{font-family:'Unbounded',sans-serif;letter-spacing:-.02em}
+  body{font-family:'Montserrat',sans-serif;background:#F3F6F4;color:#0B3B2E}
+  h1,h2,h3,.font-display{font-family:'Montserrat',sans-serif;letter-spacing:-.02em}
   :focus-visible{outline:2px solid #E0A15F;outline-offset:3px}
-  html{scroll-padding-top:84px}
+  html{scroll-padding-top:96px}
   .tile{transition:transform .35s ease, box-shadow .35s ease}
   .tile:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px rgba(11,59,46,.5)}
   .btn{transition:background .25s,color .25s,transform .25s}
@@ -41,37 +41,37 @@ tailwind.config = { theme: { extend: {
 
 <!-- 2. ШАПКА -->
 <header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-ink/10">
-  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-    <a href="#top" class="font-display font-semibold text-lg">asanali<span class="text-amber">.</span>design</a>
-    <nav class="hidden md:flex gap-8 text-sm font-medium">
+  <div class="max-w-6xl mx-auto px-5 h-20 flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between">
+    <a id="logo" href="#top" class="font-display font-bold text-xl justify-self-start">asanali<span class="text-amber">.</span>design</a>
+    <nav class="hidden lg:flex gap-10 text-lg font-medium">
       <a href="#works" class="hover:text-clay">Проекты</a>
       <a href="#services" class="hover:text-clay">Услуги</a>
       <a href="#pricing" class="hover:text-clay">Тарифы</a>
-      <a href="#about" class="hover:text-clay">Обо мне</a>
       <a href="#contacts" class="hover:text-clay">Контакты</a>
     </nav>
-    <div class="flex items-center gap-3">
-      <a href="#order" class="btn bg-ink text-white text-sm font-medium rounded-full px-5 py-2.5 hover:bg-moss">Заказать</a>
-      <button id="burger" class="md:hidden p-2" aria-label="Меню" aria-expanded="false">
+    <div class="flex items-center gap-3 justify-self-end">
+      <a id="hdr-cta" href="#order" class="btn bg-ink text-white text-base font-medium rounded-full px-6 py-3 text-center hover:bg-moss">Заказать</a>
+      <button id="burger" class="lg:hidden p-2" aria-label="Меню" aria-expanded="false">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 17h18"/></svg>
       </button>
     </div>
   </div>
-  <nav id="mobnav" class="hidden md:hidden border-t border-ink/10 px-5 py-3 flex flex-col gap-3 text-base">
-    <a href="#works">Проекты</a><a href="#services">Услуги</a><a href="#pricing">Тарифы</a><a href="#about">Обо мне</a><a href="#contacts">Контакты</a>
+  <nav id="mobnav" class="hidden lg:hidden border-t border-ink/10 px-5 py-3 flex flex-col gap-3 text-base">
+    <a href="#works">Проекты</a><a href="#services">Услуги</a><a href="#pricing">Тарифы</a><a href="#contacts">Контакты</a>
   </nav>
 </header>
 
 <main id="top">
 
 <!-- 3. HERO -->
-<section class="max-w-6xl mx-auto px-5 pt-14 pb-20 md:pt-20 grid md:grid-cols-12 gap-10 items-center">
+<section class="bg-ink text-white">
+ <div class="max-w-6xl mx-auto px-5 pt-16 pb-24 md:pt-24 grid md:grid-cols-12 gap-10 items-center">
   <div class="md:col-span-7">
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.08]">Логотипы и фирменные стили, которые выделяют бизнес среди конкурентов</h1>
-    <p class="mt-6 text-lg text-ink/75 max-w-xl">Я создаю смыслы, а не просто красивые картинки. Логотип, фирменный стиль и нейминг для бренда, который должен быть заметным и приносить продажи.</p>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.1]">Логотипы и фирменные стили, которые выделяют бизнес среди конкурентов</h1>
+    <p class="mt-6 text-lg text-white/80 max-w-xl">Я создаю смыслы, а не просто красивые картинки. Логотип, фирменный стиль и нейминг для бренда, который должен быть заметным и приносить продажи.</p>
     <div class="mt-9 flex flex-wrap gap-4">
-      <a href="#order" class="btn bg-amber text-ink font-medium rounded-full px-8 py-4 hover:bg-ink hover:text-white">Заказать</a>
-      <a href="#works" class="btn border border-ink/25 font-medium rounded-full px-8 py-4 hover:bg-ink hover:text-white">Смотреть проекты</a>
+      <a href="#order" class="btn bg-amber text-ink font-medium rounded-full px-8 py-4 hover:bg-white">Заказать</a>
+      <a href="#works" class="btn border border-white/35 font-medium rounded-full px-8 py-4 hover:bg-white hover:text-ink">Смотреть проекты</a>
     </div>
   </div>
   <div class="md:col-span-5 relative h-96 md:h-[28rem]" aria-hidden="true">
@@ -79,24 +79,13 @@ tailwind.config = { theme: { extend: {
     <img src="images/sayaruh.jpg" alt="" class="drift absolute right-0 top-0 w-44 sm:w-52 aspect-[3/4] object-cover object-top rounded-3xl shadow-xl" style="--r:5deg;animation-delay:-2s">
     <img src="images/la-moka.jpg" alt="" class="drift absolute left-1/4 bottom-0 w-40 sm:w-48 aspect-[3/4] object-cover object-top rounded-3xl shadow-xl" style="--r:2deg;animation-delay:-4s">
   </div>
-</section>
-
-<!-- 4. ДОВЕРИЕ И СТАТИСТИКА -->
-<section class="bg-ink text-white">
-  <div class="max-w-6xl mx-auto px-5 py-16 grid md:grid-cols-12 gap-10">
-    <p class="md:col-span-5 text-lg text-white/80">Работаю с бизнесом из разных сфер: кофейни и пекарни, сервис, строительство, производство. Каждый проект проходит путь от брифа до исходников и видео-инструкции по использованию стиля.</p>
-    <dl class="md:col-span-7 grid grid-cols-3 gap-6">
-      <div><dt class="text-sm text-white/65">довольных клиентов</dt><dd class="font-display text-4xl sm:text-5xl font-semibold mt-2 text-amber">50+</dd></div>
-      <div><dt class="text-sm text-white/65">года опыта</dt><dd class="font-display text-4xl sm:text-5xl font-semibold mt-2 text-amber">3</dd></div>
-      <div><dt class="text-sm text-white/65">шагов от брифа до видео-инструкции</dt><dd class="font-display text-4xl sm:text-5xl font-semibold mt-2 text-amber">12</dd></div>
-    </dl>
-  </div>
+ </div>
 </section>
 
 <!-- 5–6. ПОРТФОЛИО (данные в массиве WORKS внизу) -->
 <section id="works" class="max-w-6xl mx-auto px-5 py-20">
   <h2 class="text-3xl md:text-4xl font-semibold">Проекты</h2>
-  <p class="mt-3 text-ink/75 max-w-xl">Работаю в разных стилях и техниках, чтобы дизайн работал именно на ваш бренд. Нажмите на карточку, чтобы увидеть проект целиком.</p>
+  <p class="mt-3 text-ink/75 max-w-xl">Работаю в разных стилях и техниках, чтобы дизайн работал именно на ваш бренд. Нажмите на проект, чтобы открыть его страницу.</p>
   <div id="filters" class="mt-8 flex flex-wrap gap-2" role="tablist"></div>
   <div id="grid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   <div class="mt-10 text-center">
@@ -124,45 +113,38 @@ tailwind.config = { theme: { extend: {
         </div>
       </div>
     </div>
-    <h3 class="mt-20 text-2xl font-semibold">Почему со мной работают</h3>
-    <ol class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5 list-none">
-      <li class="rounded-3xl bg-white p-7"><h4 class="font-semibold text-lg">Индивидуальный подход</h4><p class="mt-2 text-ink/75">Анализирую бизнес и его особенности, чтобы выделить важное для целевой аудитории.</p></li>
-      <li class="rounded-3xl bg-white p-7"><h4 class="font-semibold text-lg">Работа с душой</h4><p class="mt-2 text-ink/75">В каждый логотип вкладываю душу: дизайн должен нравиться вам и привлекать ваших клиентов с первого взгляда.</p></li>
-      <li class="rounded-3xl bg-white p-7"><h4 class="font-semibold text-lg">Исходники без ограничений</h4><p class="mt-2 text-ink/75">Передаю все файлы для печати и интернета и инструкцию по их использованию.</p></li>
-      <li class="rounded-3xl bg-white p-7"><h4 class="font-semibold text-lg">Эффективный дизайн</h4><p class="mt-2 text-ink/75">Дизайн привлекает внимание, вызывает доверие и помогает увеличивать продажи.</p></li>
-      <li class="rounded-3xl bg-white p-7"><h4 class="font-semibold text-lg">Профессионализм</h4><p class="mt-2 text-ink/75">Ответственно подхожу к каждому этапу и объясняю каждую деталь работы.</p></li>
-    </ol>
   </div>
 </section>
 
 <!-- 8. УСЛУГИ -->
 <section id="services" class="max-w-6xl mx-auto px-5 py-20">
   <h2 class="text-3xl md:text-4xl font-semibold">Услуги</h2>
-  <div class="mt-10 divide-y divide-ink/10 border-y border-ink/10">
-    <article class="grid md:grid-cols-12 gap-4 py-8">
-      <h3 class="md:col-span-4 text-xl font-semibold">Логотип</h3>
-      <p class="md:col-span-6 text-ink/75">От 1 до 3 вариантов логотипа на выбор, подробная презентация и исходные файлы для веба и печати. На старших тарифах добавляется логобук с правилами использования.</p>
-      <p class="md:col-span-2 md:text-right font-medium">3–21 рабочий день</p>
+  <div class="mt-10 grid md:grid-cols-3 gap-6">
+    <article class="rounded-3xl bg-white border border-ink/10 p-8 flex flex-col">
+      <h3 class="text-xl font-semibold">Логотип</h3>
+      <p class="mt-2 font-medium text-clay">3–21 рабочий день</p>
+      <p class="mt-4 text-ink/75">От 1 до 3 вариантов логотипа на выбор, подробная презентация и исходные файлы для веба и печати. На старших тарифах добавляется логобук с правилами использования.</p>
+      <ul class="mt-5 space-y-2 text-sm text-ink/85">
+        <li class="flex gap-2"><span class="text-clay font-bold">✓</span><span>Логотип в нужных форматах и адаптивных версиях: JPEG, PNG, PDF, SVG, EPS</span></li>
+        <li class="flex gap-2"><span class="text-clay font-bold">✓</span><span>Бессрочный доступ к файлам через облако</span></li>
+      </ul>
     </article>
-    <article class="grid md:grid-cols-12 gap-4 py-8">
-      <h3 class="md:col-span-4 text-xl font-semibold">Фирменный стиль</h3>
-      <p class="md:col-span-6 text-ink/75">Дизайн-система: визуальный язык бренда с правилами использования логотипа, цветов и шрифтов. Фирменные носители, оформление Instagram и гайдбук.</p>
-      <p class="md:col-span-2 md:text-right font-medium">14–30 рабочих дней</p>
+    <article class="rounded-3xl bg-white border border-ink/10 p-8 flex flex-col">
+      <h3 class="text-xl font-semibold">Фирменный стиль</h3>
+      <p class="mt-2 font-medium text-clay">14–30 рабочих дней</p>
+      <p class="mt-4 text-ink/75">Дизайн-система: визуальный язык бренда с правилами использования логотипа, цветов и шрифтов. Фирменные носители, оформление Instagram и гайдбук.</p>
+      <ul class="mt-5 space-y-2 text-sm text-ink/85">
+        <li class="flex gap-2"><span class="text-clay font-bold">✓</span><span>Логотип в нужных форматах и адаптивных версиях: JPEG, PNG, PDF, SVG, EPS</span></li>
+        <li class="flex gap-2"><span class="text-clay font-bold">✓</span><span>Логобук или гайдбук с правилами использования</span></li>
+        <li class="flex gap-2"><span class="text-clay font-bold">✓</span><span>Бессрочный доступ к файлам через облако</span></li>
+        <li class="flex gap-2"><span class="text-clay font-bold">✓</span><span>Уникальную дизайн-систему: логотип, цвета и шрифты в едином образе бренда</span></li>
+      </ul>
     </article>
-    <article class="grid md:grid-cols-12 gap-4 py-8">
-      <h3 class="md:col-span-4 text-xl font-semibold">Нейминг</h3>
-      <p class="md:col-span-6 text-ink/75">Анализ конкурентов, генерация и отсев названий, проверка поисковой выдачи и первичная проверка возможности регистрации товарного знака. Презентую 10 названий и помогаю выбрать приоритетное.</p>
-      <p class="md:col-span-2 md:text-right font-medium">10–14 дней</p>
+    <article class="rounded-3xl bg-white border border-ink/10 p-8 flex flex-col">
+      <h3 class="text-xl font-semibold">Нейминг</h3>
+      <p class="mt-2 font-medium text-clay">10–14 дней</p>
+      <p class="mt-4 text-ink/75">Анализ конкурентов, генерация и отсев названий, проверка поисковой выдачи и первичная проверка возможности регистрации товарного знака. Презентую 10 названий и помогаю выбрать приоритетное.</p>
     </article>
-  </div>
-  <div class="mt-10 rounded-3xl bg-fog p-8">
-    <h3 class="text-xl font-semibold">Что вы получите</h3>
-    <ul class="mt-4 grid md:grid-cols-2 gap-x-10 gap-y-3 text-ink/85">
-      <li>Логотип в нужных форматах и адаптивных версиях: JPEG, PNG, PDF, SVG, EPS</li>
-      <li>Логобук или гайдбук с правилами использования</li>
-      <li>Бессрочный доступ к файлам через облако</li>
-      <li>Уникальную дизайн-систему: логотип, цвета и шрифты в едином образе бренда</li>
-    </ul>
   </div>
 </section>
 
@@ -234,12 +216,6 @@ tailwind.config = { theme: { extend: {
   <p class="text-center text-white/50 text-xs pb-8">© 2026 Асанали</p>
 </footer>
 
-<!-- Просмотр проекта целиком -->
-<div id="lb" class="hidden fixed inset-0 z-50 bg-ink/90 p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label="Проект">
-  <button id="lb-close" class="fixed top-4 right-4 w-12 h-12 rounded-full bg-white text-ink text-2xl" aria-label="Закрыть">×</button>
-  <img id="lb-img" alt="" class="mx-auto max-w-full md:max-w-md rounded-2xl my-8">
-</div>
-
 <script>
 /* ===== НАСТРОЙКИ ===== */
 const WHATSAPP = "77071591625";
@@ -309,16 +285,24 @@ const burger = document.getElementById('burger'), mob = document.getElementById(
 burger.onclick = () => { const o = mob.classList.toggle('hidden'); burger.setAttribute('aria-expanded', String(!o)); };
 mob.querySelectorAll('a').forEach(a => a.onclick = () => mob.classList.add('hidden'));
 
+
+// Шапка: ширина кнопки = ширине логотипа, чтобы расстояния до меню были равны
+function eqHeader(){
+  const l=document.getElementById('logo'), b=document.getElementById('hdr-cta');
+  b.style.width = '';
+  if(window.innerWidth>=1024) b.style.width = l.offsetWidth+'px';
+}
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(eqHeader);
+window.addEventListener('load',eqHeader); window.addEventListener('resize',eqHeader); eqHeader();
+
 // Портфолио
 const grid = document.getElementById('grid'), filters = document.getElementById('filters');
 function render(cat){
   grid.innerHTML = WORKS.filter(w => cat==="Все"||w.cat===cat).map(w=>`
-    <article class="tile rounded-3xl bg-white border border-ink/10 overflow-hidden">
-      <button class="block w-full text-left" data-img="${w.img}" data-title="${w.title}" aria-label="Открыть проект ${w.title}">
-        <img src="images/${w.img}.jpg" alt="${w.title}: ${w.desc}" loading="lazy" class="w-full aspect-[4/5] object-cover object-top">
-        <div class="p-6"><h3 class="text-lg font-semibold">${w.title}</h3><p class="mt-1 text-sm text-ink/70">${w.desc}</p></div>
-      </button>
-    </article>`).join('');
+    <a href="projects/${w.img}.html" class="tile block rounded-3xl bg-white border border-ink/10 overflow-hidden" aria-label="Открыть проект ${w.title}">
+      <img src="images/covers/${w.img}.jpg" alt="Логотип ${w.title}" loading="lazy" class="w-full aspect-[3/2] object-cover">
+      <div class="p-6"><h3 class="text-lg font-semibold">${w.title}</h3><p class="mt-1 text-sm text-ink/70">${w.desc}</p></div>
+    </a>`).join('');
   filters.querySelectorAll('button').forEach(b=>{
     const on = b.dataset.cat===cat;
     b.setAttribute('aria-selected', on);
@@ -328,14 +312,6 @@ function render(cat){
 filters.innerHTML = CATEGORIES.map(c=>`<button role="tab" data-cat="${c}">${c}</button>`).join('');
 filters.onclick = e => { const b = e.target.closest('button'); if(b) render(b.dataset.cat); };
 render("Все");
-
-// Просмотр проекта
-const lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img');
-grid.onclick = e => { const b = e.target.closest('button[data-img]'); if(!b) return;
-  lbImg.src = `images/${b.dataset.img}.jpg`; lbImg.alt = b.dataset.title; lb.classList.remove('hidden'); document.body.style.overflow='hidden'; };
-const closeLb = () => { lb.classList.add('hidden'); document.body.style.overflow=''; };
-lb.onclick = e => { if(e.target!==lbImg) closeLb(); };
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeLb(); });
 
 // Этапы
 document.getElementById('steps').innerHTML = STEPS.map((s,i)=>`
