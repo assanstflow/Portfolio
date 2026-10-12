@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAME Studio — логотипы и айдентика</title>
+<meta name="description" content="Логотипы, нейминг и фирменный стиль для бизнеса. Замените описание на своё.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { ink:'#14213D', fog:'#E9EDF3', paper:'#F7F8FB', cobalt:'#3340F5', mist:'#DCE1FF' },
+  fontFamily: { display:['Unbounded','sans-serif'], body:['Onest','sans-serif'] }
+}}}
+</script>
+<style>
+  body{font-family:'Onest',sans-serif;background:#F7F8FB;color:#14213D}
+  h1,h2,h3,.font-display{font-family:'Unbounded',sans-serif;letter-spacing:-.02em}
+  :focus-visible{outline:2px solid #3340F5;outline-offset:3px}
+  html{scroll-padding-top:84px}
+  .tile{transition:transform .35s ease, box-shadow .35s ease}
+  .tile:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px rgba(20,33,61,.45)}
+  .btn{transition:background .25s,color .25s,transform .25s}
+  .btn:hover{transform:translateY(-2px)}
+  .slider{scroll-snap-type:x mandatory;scrollbar-width:none}
+  .slider::-webkit-scrollbar{display:none}
+  .slide{scroll-snap-align:start}
+  /* единственный анимированный момент: логотипы в hero */
+  @keyframes drift{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-14px) rotate(var(--r))}}
+  .drift{animation:drift 7s ease-in-out infinite}
+  @media (prefers-reduced-motion:reduce){.drift{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- 1. ВЕРХНЯЯ СТРОКА: замените текст акции -->
+<a href="#order" class="block bg-cobalt text-white text-center text-sm py-2.5 px-4 hover:bg-ink transition-colors">
+  Скидка 15% на первый заказ до 30 ноября. Оставьте заявку и получите бриф бесплатно
+</a>
+
+<!-- 2. ШАПКА -->
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-ink/10">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#top" class="font-display font-semibold text-lg">NAME<span class="text-cobalt">.</span>studio</a>
+    <nav class="hidden md:flex gap-8 text-sm font-medium">
+      <a href="#works" class="hover:text-cobalt">Проекты</a>
+      <a href="#services" class="hover:text-cobalt">Услуги</a>
+      <a href="#about" class="hover:text-cobalt">Обо мне</a>
+      <a href="#contacts" class="hover:text-cobalt">Контакты</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#order" class="btn bg-ink text-white text-sm font-medium rounded-full px-5 py-2.5 hover:bg-cobalt">Заказать</a>
+      <button id="burger" class="md:hidden p-2" aria-label="Меню" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 17h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobnav" class="hidden md:hidden border-t border-ink/10 px-5 py-3 flex flex-col gap-3 text-base">
+    <a href="#works">Проекты</a><a href="#services">Услуги</a><a href="#about">Обо мне</a><a href="#contacts">Контакты</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- 3. HERO -->
+<section class="max-w-6xl mx-auto px-5 pt-16 pb-20 md:pt-24 grid md:grid-cols-12 gap-10 items-center">
+  <div class="md:col-span-7">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.08]">Логотипы и бренды, которые запоминают с первого взгляда</h1>
+    <p class="mt-6 text-lg text-ink/70 max-w-xl">Создаю айдентику для бизнеса: от названия и знака до полного фирменного стиля. Без шаблонов и с понятными сроками.</p>
+    <div class="mt-9 flex flex-wrap gap-4">
+      <a href="#order" class="btn bg-cobalt text-white font-medium rounded-full px-8 py-4 hover:bg-ink">Заказать</a>
+      <a href="#works" class="btn border border-ink/20 font-medium rounded-full px-8 py-4 hover:bg-ink hover:text-white">Смотреть проекты</a>
+    </div>
+  </div>
+  <!-- Мокап: замените блоки на свои логотипы (img) -->
+  <div class="md:col-span-5 relative h-80 md:h-[26rem]" aria-hidden="true">
+    <div class="drift absolute left-0 top-4 w-44 h-44 rounded-[2rem] bg-ink grid place-items-center" style="--r:-6deg">
+      <svg width="84" height="84" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="#3340F5"/><rect x="50" y="10" width="40" height="40" fill="#F7F8FB"/></svg>
+    </div>
+    <div class="drift absolute right-0 top-20 w-52 h-52 rounded-full bg-mist grid place-items-center" style="--r:5deg;animation-delay:-2s">
+      <svg width="96" height="96" viewBox="0 0 100 100"><path d="M10 80 L50 10 L90 80 Z" fill="#14213D"/><circle cx="50" cy="62" r="12" fill="#F7F8FB"/></svg>
+    </div>
+    <div class="drift absolute left-12 bottom-0 w-48 h-36 rounded-3xl bg-white border border-ink/10 grid place-items-center" style="--r:3deg;animation-delay:-4s">
+      <span class="font-display font-semibold text-2xl text-cobalt">Aa&nbsp;Bb</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4. СТАТИСТИКА: замените цифры -->
+<section class="bg-ink text-white">
+  <div class="max-w-6xl mx-auto px-5 py-16 grid md:grid-cols-12 gap-10">
+    <p class="md:col-span-5 text-lg text-white/75">Работаю с компаниями из разных стран: от локальных кофеен до производств и юридических фирм. Каждый проект проходит путь от брифа до готовых файлов и гайда по использованию.</p>
+    <dl class="md:col-span-7 grid grid-cols-3 gap-6 text-left">
+      <div><dt class="text-sm text-white/60 order-2">стран</dt><dd class="font-display text-4xl sm:text-5xl font-semibold mt-2">12</dd></div>
+      <div><dt class="text-sm text-white/60">проектов</dt><dd class="font-display text-4xl sm:text-5xl font-semibold mt-2">350+</dd></div>
+      <div><dt class="text-sm text-white/60">лет опыта</dt><dd class="font-display text-4xl sm:text-5xl font-semibold mt-2">9</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 5–6. ПОРТФОЛИО: фильтры + сетка (данные в массиве WORKS внизу страницы) -->
+<section id="works" class="max-w-6xl mx-auto px-5 py-20">
+  <h2 class="text-3xl md:text-4xl font-semibold">Избранные проекты</h2>
+  <div id="filters" class="mt-8 flex flex-wrap gap-2" role="tablist"></div>
+  <div id="grid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  <div class="mt-10 text-center">
+    <!-- Ссылка на ваш Behance / Dprofile -->
+    <a href="https://www.behance.net/" target="_blank" rel="noopener" class="btn inline-block border border-ink/20 rounded-full px-8 py-4 font-medium hover:bg-ink hover:text-white">Больше проектов</a>
+  </div>
+</section>
+
+<!-- 7. ОБО МНЕ -->
+<section id="about" class="bg-fog">
+  <div class="max-w-6xl mx-auto px-5 py-20 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <div class="aspect-[4/5] rounded-[2rem] bg-mist grid place-items-center text-ink/40 text-sm">Ваше фото (замените на img)</div>
+    </div>
+    <div class="md:col-span-7 self-center">
+      <h2 class="text-3xl md:text-4xl font-semibold">Обо мне</h2>
+      <p class="mt-6 text-lg text-ink/75 max-w-xl">Дизайнер-айдентик с опытом более 9 лет. Мои работы публиковались на международных платформах и получали награды в профессиональных конкурсах. Замените этот текст на свою историю.</p>
+      <ul class="mt-6 space-y-3 text-ink/80">
+        <li>Победитель конкурса «Название конкурса», 2024</li>
+        <li>Публикации в каталогах логотипов и брендинга</li>
+        <li>Клиенты из 12 стран</li>
+      </ul>
+      <div class="mt-8 flex gap-3">
+        <a href="https://www.behance.net/" target="_blank" rel="noopener" class="btn rounded-full bg-ink text-white px-6 py-3 text-sm font-medium hover:bg-cobalt">Behance</a>
+        <a href="https://dprofile.ru/" target="_blank" rel="noopener" class="btn rounded-full border border-ink/20 px-6 py-3 text-sm font-medium hover:bg-ink hover:text-white">Dprofile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. УСЛУГИ -->
+<section id="services" class="max-w-6xl mx-auto px-5 py-20">
+  <h2 class="text-3xl md:text-4xl font-semibold">Услуги</h2>
+  <div class="mt-10 divide-y divide-ink/10 border-y border-ink/10">
+    <article class="grid md:grid-cols-12 gap-4 py-8">
+      <h3 class="md:col-span-4 text-xl font-semibold">Нейминг</h3>
+      <p class="md:col-span-6 text-ink/70">Подберу название, которое легко произнести и проверить на занятость домена и товарного знака. Предложу 10 вариантов с обоснованием.</p>
+      <p class="md:col-span-2 md:text-right font-medium">от 5 дней</p>
+    </article>
+    <article class="grid md:grid-cols-12 gap-4 py-8">
+      <h3 class="md:col-span-4 text-xl font-semibold">Разработка логотипа</h3>
+      <p class="md:col-span-6 text-ink/70">Знак и логотип в нескольких версиях, с проверкой на мелких размерах и в одном цвете. Передаю исходники в векторе.</p>
+      <p class="md:col-span-2 md:text-right font-medium">от 7 дней</p>
+    </article>
+    <article class="grid md:grid-cols-12 gap-4 py-8">
+      <h3 class="md:col-span-4 text-xl font-semibold">Брендинг и фирменный стиль</h3>
+      <p class="md:col-span-6 text-ink/70">Палитра, шрифты, носители и брендбук. Бренд будет выглядеть одинаково на сайте, упаковке и в соцсетях.</p>
+      <p class="md:col-span-2 md:text-right font-medium">от 21 дня</p>
+    </article>
+  </div>
+</section>
+
+<!-- 9. ЭТАПЫ И ПРЕДОПЛАТА -->
+<section class="bg-ink text-white">
+  <div class="max-w-6xl mx-auto px-5 py-20">
+    <h2 class="text-3xl md:text-4xl font-semibold">Как мы работаем</h2>
+    <ol class="mt-10 grid md:grid-cols-3 gap-6">
+      <li class="rounded-3xl border border-white/15 p-8"><span class="font-display text-cobalt text-3xl bg-white rounded-xl px-3 py-1 inline-block">01</span><h3 class="mt-5 text-xl font-semibold">Брифирование</h3><p class="mt-3 text-white/70">Вы заполняете бриф, мы обсуждаем задачи, аудиторию и конкурентов.</p></li>
+      <li class="rounded-3xl border border-white/15 p-8"><span class="font-display text-cobalt text-3xl bg-white rounded-xl px-3 py-1 inline-block">02</span><h3 class="mt-5 text-xl font-semibold">Оплата</h3><p class="mt-3 text-white/70">Вносите предоплату 50%, и я начинаю работу над концепциями.</p></li>
+      <li class="rounded-3xl border border-white/15 p-8"><span class="font-display text-cobalt text-3xl bg-white rounded-xl px-3 py-1 inline-block">03</span><h3 class="mt-5 text-xl font-semibold">Презентация</h3><p class="mt-3 text-white/70">Показываю результат, вношу правки и передаю файлы после финальной оплаты 50%.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 10. ТАРИФЫ: цены, сроки и состав меняются в массиве PLANS внизу страницы -->
+<section id="pricing" class="max-w-6xl mx-auto px-5 py-20">
+  <h2 class="text-3xl md:text-4xl font-semibold">Тарифы</h2>
+  <p class="mt-3 text-ink/70">Нажмите «Выбрать», и сообщение с тарифом откроется в WhatsApp.</p>
+  <div id="plans" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+</section>
+
+<!-- 11. ОТЗЫВЫ -->
+<section class="bg-fog">
+  <div class="max-w-6xl mx-auto px-5 py-20">
+    <div class="flex items-end justify-between gap-4">
+      <h2 class="text-3xl md:text-4xl font-semibold">Отзывы клиентов</h2>
+      <div class="flex gap-2">
+        <button id="prev" class="btn w-12 h-12 rounded-full border border-ink/20 hover:bg-ink hover:text-white" aria-label="Назад">‹</button>
+        <button id="next" class="btn w-12 h-12 rounded-full border border-ink/20 hover:bg-ink hover:text-white" aria-label="Вперёд">›</button>
+      </div>
+    </div>
+    <div id="slider" class="slider mt-10 flex gap-6 overflow-x-auto"></div>
+  </div>
+</section>
+
+<!-- ФОРМА ЗАКАЗА -->
+<section id="order" class="max-w-3xl mx-auto px-5 py-20">
+  <h2 class="text-3xl md:text-4xl font-semibold">Расскажите о проекте</h2>
+  <p class="mt-3 text-ink/70">Заполните поля, и черновик сообщения откроется в WhatsApp. Ответ в течение дня.</p>
+  <div class="mt-8 grid gap-4">
+    <label class="grid gap-1 text-sm font-medium">Имя<input id="f-name" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal" placeholder="Как к вам обращаться"></label>
+    <label class="grid gap-1 text-sm font-medium">Что нужно сделать
+      <select id="f-service" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal">
+        <option>Логотип</option><option>Нейминг</option><option>Фирменный стиль</option><option>Пока не знаю</option>
+      </select></label>
+    <label class="grid gap-1 text-sm font-medium">Описание задачи<textarea id="f-text" rows="4" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal" placeholder="Чем занимается компания, для кого, сроки"></textarea></label>
+    <button id="send" class="btn bg-cobalt text-white font-medium rounded-full px-8 py-4 hover:bg-ink justify-self-start">Отправить в WhatsApp</button>
+  </div>
+</section>
+
+</main>
+
+<!-- 12. ПОДВАЛ: замените контакты -->
+<footer id="contacts" class="bg-ink text-white">
+  <div class="max-w-6xl mx-auto px-5 py-16 grid md:grid-cols-3 gap-10">
+    <div>
+      <p class="font-display font-semibold text-xl">NAME<span class="text-cobalt">.</span>studio</p>
+      <p class="mt-3 text-white/60 text-sm">Логотипы, нейминг и айдентика</p>
+    </div>
+    <address class="not-italic text-white/80 space-y-2">
+      <p>Город, улица, дом</p>
+      <p><a class="hover:text-white" href="tel:+70000000000">+7 000 000 00 00</a></p>
+      <p><a class="hover:text-white" href="mailto:hello@example.com">hello@example.com</a></p>
+    </address>
+    <div class="flex flex-wrap gap-3 content-start">
+      <a href="https://t.me/username" target="_blank" rel="noopener" class="btn rounded-full border border-white/25 px-5 py-2.5 text-sm hover:bg-white hover:text-ink">Telegram</a>
+      <a href="https://instagram.com/username" target="_blank" rel="noopener" class="btn rounded-full border border-white/25 px-5 py-2.5 text-sm hover:bg-white hover:text-ink">Instagram</a>
+      <a id="wa-footer" href="#" target="_blank" rel="noopener" class="btn rounded-full border border-white/25 px-5 py-2.5 text-sm hover:bg-white hover:text-ink">WhatsApp</a>
+    </div>
+  </div>
+  <p class="text-center text-white/40 text-xs pb-8">© 2026 NAME Studio</p>
+</footer>
+
+<script>
+/* ===== НАСТРОЙКИ: меняйте здесь ===== */
+const WHATSAPP = "70000000000"; // номер без + и пробелов
+
+const CATEGORIES = ["Все","Финансы и право","Промышленность","Еда","Одежда","Красота и здоровье","HoReCa"];
+
+const WORKS = [ // title — название компании, desc — описание, cat — категория, color — фон превью
+  {title:"Nord Capital",   desc:"Логотип для инвестиционной компании", cat:"Финансы и право",    color:"#14213D"},
+  {title:"Lex & Partners", desc:"Айдентика юридической фирмы",         cat:"Финансы и право",    color:"#3340F5"},
+  {title:"Metalform",      desc:"Логотип для производства",            cat:"Промышленность",     color:"#2B3A55"},
+  {title:"Burger Lab",     desc:"Логотип для фастфуда",                cat:"Еда",                color:"#DCE1FF"},
+  {title:"Kofe Kit",       desc:"Айдентика для кофейни",               cat:"HoReCa",             color:"#E9EDF3"},
+  {title:"Linea",          desc:"Логотип бренда одежды",               cat:"Одежда",             color:"#3340F5"},
+  {title:"Dermis",         desc:"Айдентика косметического бренда",     cat:"Красота и здоровье", color:"#DCE1FF"},
+  {title:"Hotel Aral",     desc:"Фирменный стиль отеля",               cat:"HoReCa",             color:"#14213D"},
+  {title:"Oven&Co",        desc:"Логотип для пекарни",                 cat:"Еда",                color:"#E9EDF3"}
+];
+
+const PLANS = [ // price — цена, term — срок, items — что входит
+  {name:"Экспресс",     price:"от 30 000 ₽",  term:"3 дня",  items:["1 концепция","2 круга правок","Файлы PNG и SVG"]},
+  {name:"Стандартный",  price:"от 60 000 ₽",  term:"7 дней", items:["3 концепции","3 круга правок","Версии логотипа","Мини-гайд"], hit:true},
+  {name:"Расширенный",  price:"от 110 000 ₽", term:"14 дней",items:["4 концепции","Фирменные цвета и шрифты","Носители (визитка, бланк)","Гайд по использованию"]},
+  {name:"Максимальный", price:"от 200 000 ₽", term:"28 дней",items:["Нейминг","Логотип и айдентика","Полный брендбук","Поддержка после сдачи"]}
+];
+
+const REVIEWS = [ // text, name, role
+  {text:"Получили логотип за неделю, и он сразу прижился на упаковке. Нам понравилась чёткая коммуникация на всех этапах.", name:"Имя Фамилия", role:"Основатель, кофейня"},
+  {text:"Фирменный стиль помог нам выглядеть солидно на переговорах с партнёрами. Рекомендую.", name:"Имя Фамилия", role:"Директор, юридическая фирма"},
+  {text:"Дизайнер быстро вник в нашу отрасль и предложил неожиданные, но точные решения.", name:"Имя Фамилия", role:"Маркетолог, производство"}
+];
+/* ===== конец настроек ===== */
+
+const wa = t => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
+document.getElementById('wa-footer').href = wa("Здравствуйте! Хочу обсудить проект.");
+
+// Мобильное меню
+const burger = document.getElementById('burger'), mob = document.getElementById('mobnav');
+burger.onclick = () => { const o = mob.classList.toggle('hidden'); burger.setAttribute('aria-expanded', String(!o)); };
+mob.querySelectorAll('a').forEach(a => a.onclick = () => mob.classList.add('hidden'));
+
+// Простые SVG-знаки для превью (замените карточки на <img> со своими работами)
+const marks = [
+  c=>`<circle cx="50" cy="50" r="30" fill="${c}"/>`,
+  c=>`<rect x="22" y="22" width="56" height="56" rx="10" fill="${c}"/>`,
+  c=>`<path d="M50 16 84 80H16Z" fill="${c}"/>`
+];
+function tile(w, i){
+  const dark = ["#14213D","#2B3A55","#3340F5"].includes(w.color);
+  const fg = dark ? "#F7F8FB" : "#14213D";
+  return `<article class="tile rounded-3xl bg-white border border-ink/10 overflow-hidden">
+    <div class="aspect-[4/3] grid place-items-center" style="background:${w.color}">
+      <svg width="96" height="96" viewBox="0 0 100 100">${marks[i%3](fg)}</svg>
+    </div>
+    <div class="p-6"><h3 class="text-lg font-semibold">${w.title}</h3><p class="mt-1 text-sm text-ink/65">${w.desc}</p></div>
+  </article>`;
+}
+const grid = document.getElementById('grid'), filters = document.getElementById('filters');
+function render(cat){
+  grid.innerHTML = WORKS.map((w,i)=>({w,i})).filter(x=>cat==="Все"||x.w.cat===cat).map(x=>tile(x.w,x.i)).join('');
+  filters.querySelectorAll('button').forEach(b=>{
+    const on = b.dataset.cat===cat;
+    b.setAttribute('aria-selected', on);
+    b.className = "btn rounded-full px-5 py-2.5 text-sm font-medium border " + (on ? "bg-ink text-white border-ink" : "border-ink/20 hover:bg-ink hover:text-white");
+  });
+}
+filters.innerHTML = CATEGORIES.map(c=>`<button role="tab" data-cat="${c}">${c}</button>`).join('');
+filters.onclick = e => { const b = e.target.closest('button'); if(b) render(b.dataset.cat); };
+render("Все");
+
+// Тарифы
+document.getElementById('plans').innerHTML = PLANS.map(p=>`
+  <article class="tile rounded-3xl p-7 flex flex-col ${p.hit?'bg-ink text-white':'bg-white border border-ink/10'}">
+    <h3 class="text-lg font-semibold">${p.name}</h3>
+    <p class="mt-4 font-display text-2xl font-semibold">${p.price}</p>
+    <p class="mt-1 text-sm ${p.hit?'text-white/60':'text-ink/60'}">Срок: ${p.term}</p>
+    <ul class="mt-6 space-y-2 text-sm flex-1">${p.items.map(i=>`<li class="flex gap-2"><span class="text-cobalt font-bold ${p.hit?'!text-mist':''}">✓</span>${i}</li>`).join('')}</ul>
+    <a target="_blank" rel="noopener" href="${wa(`Здравствуйте! Хочу заказать тариф «${p.name}» (${p.price}, срок ${p.term}).`)}"
+       class="btn mt-8 text-center rounded-full px-6 py-3.5 font-medium ${p.hit?'bg-white text-ink hover:bg-mist':'bg-ink text-white hover:bg-cobalt'}">Выбрать</a>
+  </article>`).join('');
+
+// Отзывы
+const slider = document.getElementById('slider');
+slider.innerHTML = REVIEWS.map(r=>`
+  <figure class="slide shrink-0 w-[85%] md:w-[calc(50%-12px)] rounded-3xl bg-white p-8">
+    <blockquote class="text-lg leading-relaxed">${r.text}</blockquote>
+    <figcaption class="mt-6 text-sm"><span class="font-semibold">${r.name}</span><br><span class="text-ink/60">${r.role}</span></figcaption>
+  </figure>`).join('');
+const step = () => slider.firstElementChild.getBoundingClientRect().width + 24;
+document.getElementById('next').onclick = () => slider.scrollBy({left: step(), behavior:'smooth'});
+document.getElementById('prev').onclick = () => slider.scrollBy({left: -step(), behavior:'smooth'});
+
+// Форма -> WhatsApp
+document.getElementById('send').onclick = () => {
+  const n = document.getElementById('f-name').value.trim() || "—";
+  const s = document.getElementById('f-service').value;
+  const t = document.getElementById('f-text').value.trim() || "—";
+  window.open(wa(`Здравствуйте! Меня зовут ${n}.\nУслуга: ${s}.\nЗадача: ${t}`), '_blank');
+};
+</script>
+</body>
+</html>
