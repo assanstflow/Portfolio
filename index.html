@@ -67,7 +67,7 @@ tailwind.config = { theme: { extend: {
 <section class="bg-ink text-white">
  <div class="max-w-6xl mx-auto px-5 py-14 md:py-24 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
   <div>
-    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">Приветствую вас,<br class="hidden sm:block"> меня зовут Асанали!</h1>
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold" style="line-height:1.15">Приветствую вас,<br class="hidden sm:block"> меня зовут Асанали!</h1>
     <p class="mt-6 text-lg text-white/80 max-w-md">Создаю уникальные и качественные визуальные решения, которые помогут повысить узнаваемость бренда</p>
     <div class="mt-9 flex flex-col sm:flex-row gap-4">
       <a href="#order" class="btn bg-amber text-ink font-medium text-center rounded-full px-8 py-4 hover:bg-white">Заказать</a>
@@ -81,7 +81,7 @@ tailwind.config = { theme: { extend: {
 <!-- 4. БЛОК-ОБЕЩАНИЕ: заголовок подгоняется под ширину рамки, плашки по краям текста -->
 <section class="bg-paper">
  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 id="promise" class="text-3xl sm:text-4xl font-semibold leading-[1.25]">
+  <h2 id="promise" class="text-3xl sm:text-4xl font-semibold" style="line-height:1.3">
    <span class="md:block md:w-max md:whitespace-nowrap">Разработаю логотип и айдентику,</span>
    <span class="md:block md:w-max md:whitespace-nowrap">которые помогут вашему бренду</span>
    <span class="md:block md:w-max md:whitespace-nowrap">выделиться среди конкурентов и</span>
@@ -97,45 +97,22 @@ tailwind.config = { theme: { extend: {
 <!-- 5. БЛОК ДОВЕРИЯ: клиенты по Казахстану -->
 <section class="bg-fog">
  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
-    <p class="text-7xl sm:text-8xl font-bold leading-none">70+</p>
-    <p class="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug">довольных клиентов по всему Казахстану</p>
+  <div id="trust-line" class="flex flex-wrap items-center gap-x-6 gap-y-2 md:flex-nowrap md:w-max md:gap-x-[0.5em]">
+    <p class="text-7xl sm:text-8xl md:text-[2.6em] font-bold leading-none">70+</p>
+    <p class="text-2xl sm:text-3xl md:text-[1em] font-semibold md:whitespace-nowrap" style="line-height:1.25">довольных клиентов по всему Казахстану</p>
   </div>
-  <p class="mt-10 text-xl sm:text-2xl leading-relaxed text-ink/75">Работаю с разными стилистиками. Создаю дизайн как и для детских магазинов, так и для крупных компаний с премиальным сегментом товаров или услуг</p>
+  <p class="mt-3 md:mt-4 text-xl sm:text-2xl leading-relaxed text-ink/75">Работаю с разными стилистиками. Создаю дизайн как и для детских магазинов, так и для крупных компаний с премиальным сегментом товаров или услуг</p>
  </div>
 </section>
 
 <!-- 5–6. ПОРТФОЛИО (данные в массиве WORKS внизу) -->
 <section id="works" class="max-w-6xl mx-auto px-5 py-20">
-  <h2 class="text-3xl md:text-4xl font-semibold">Проекты</h2>
-  <p class="mt-3 text-ink/75 max-w-xl">Работаю в разных стилях и техниках, чтобы дизайн работал именно на ваш бренд. Нажмите на проект, чтобы открыть его страницу.</p>
-  <div id="filters" class="mt-8 flex flex-wrap gap-2" role="tablist"></div>
+  <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold">Проекты</h2>
+  <p class="mt-4 text-xl md:text-2xl text-ink/75">Работаю в разных стилях и техниках, чтобы дизайн работал именно на ваш бренд. Нажмите на проект, чтобы открыть его страницу.</p>
+  <div id="filters" class="mt-8 flex flex-wrap gap-3" role="tablist"></div>
   <div id="grid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   <div class="mt-10 text-center">
     <a href="https://instagram.com/asanali.design" target="_blank" rel="noopener" class="btn inline-block border border-ink/25 rounded-full px-8 py-4 font-medium hover:bg-ink hover:text-white">Больше проектов в Instagram</a>
-  </div>
-</section>
-
-<!-- 7. ОБО МНЕ + ПОЧЕМУ Я -->
-<section id="about" class="bg-fog">
-  <div class="max-w-6xl mx-auto px-5 py-20">
-    <div class="grid md:grid-cols-12 gap-10">
-      <div class="md:col-span-4">
-        <img src="images/asanali.jpg" alt="Асанали, графический дизайнер" class="w-full aspect-[4/5] object-cover rounded-[2rem]">
-      </div>
-      <div class="md:col-span-8 self-center">
-        <h2 class="text-3xl md:text-4xl font-semibold">Привет, я Асанали</h2>
-        <p class="mt-6 text-lg text-ink/80 max-w-xl">Графический дизайнер с 3-летним опытом. Специализируюсь на логотипах, фирменных стилях и неймингах, которые выделяют бизнес среди конкурентов и помогают повышать продажи.</p>
-        <ul class="mt-6 space-y-3 text-ink/85">
-          <li>Более 70 довольных клиентов, получивших уникальный дизайн</li>
-          <li>Прошёл обучение у топовых дизайнеров и перенял их знания и опыт</li>
-        </ul>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="https://instagram.com/asanali.design" target="_blank" rel="noopener" class="btn rounded-full bg-ink text-white px-6 py-3 text-sm font-medium hover:bg-moss">Instagram</a>
-          <a href="https://t.me/asanalidesign" target="_blank" rel="noopener" class="btn rounded-full border border-ink/25 px-6 py-3 text-sm font-medium hover:bg-ink hover:text-white">Telegram</a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -191,29 +168,29 @@ tailwind.config = { theme: { extend: {
 <!-- 11. ОТЗЫВЫ -->
 <section class="bg-fog">
   <div class="max-w-6xl mx-auto px-5 py-20">
-    <div class="flex items-end justify-between gap-4">
-      <h2 class="text-3xl md:text-4xl font-semibold">Отзывы клиентов</h2>
-      <div class="flex gap-2">
-        <button id="prev" class="btn w-12 h-12 rounded-full border border-ink/25 hover:bg-ink hover:text-white" aria-label="Назад">‹</button>
-        <button id="next" class="btn w-12 h-12 rounded-full border border-ink/25 hover:bg-ink hover:text-white" aria-label="Вперёд">›</button>
+    <h2 class="text-3xl md:text-4xl font-semibold text-center">Отзывы клиентов</h2>
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-[auto_1fr_auto] items-center gap-4 md:gap-6">
+      <button id="prev" class="btn order-2 md:order-1 justify-self-start w-12 h-12 rounded-full border border-ink/25 text-2xl leading-none hover:bg-ink hover:text-white disabled:opacity-30 disabled:pointer-events-none" aria-label="Предыдущий отзыв">‹</button>
+      <div id="slider" class="order-1 col-span-2 md:col-span-1 md:order-2 min-w-0 overflow-hidden rounded-3xl">
+        <div id="track" class="flex transition-transform duration-500 ease-out"></div>
       </div>
+      <button id="next" class="btn order-3 justify-self-end w-12 h-12 rounded-full border border-ink/25 text-2xl leading-none hover:bg-ink hover:text-white disabled:opacity-30 disabled:pointer-events-none" aria-label="Следующий отзыв">›</button>
     </div>
-    <div id="slider" class="slider mt-10 flex gap-6 overflow-x-auto"></div>
   </div>
 </section>
 
 <!-- ФОРМА ЗАКАЗА -->
-<section id="order" class="max-w-6xl mx-auto px-5 py-20"><div class="max-w-2xl">
+<section id="order" class="max-w-6xl mx-auto px-5 py-20"><div class="max-w-2xl mx-auto text-center">
   <h2 class="text-3xl md:text-4xl font-semibold">Расскажите о проекте</h2>
   <p class="mt-3 text-ink/75">Заполните поля, и черновик сообщения откроется в WhatsApp.</p>
   <div class="mt-8 grid gap-4">
-    <label class="grid gap-1 text-sm font-medium">Имя<input id="f-name" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal" placeholder="Как к вам обращаться"></label>
-    <label class="grid gap-1 text-sm font-medium">Что нужно сделать
-      <select id="f-service" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal">
+    <label class="grid gap-2 text-base font-medium">Имя<input id="f-name" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal text-left" placeholder="Как к вам обращаться"></label>
+    <label class="grid gap-2 text-base font-medium">Что нужно сделать
+      <select id="f-service" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal text-left">
         <option>Логотип</option><option>Фирменный стиль</option><option>Нейминг</option><option>Пока не знаю</option>
       </select></label>
-    <label class="grid gap-1 text-sm font-medium">Описание задачи<textarea id="f-text" rows="4" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal" placeholder="Чем занимается компания, для кого, сроки"></textarea></label>
-    <button id="send" class="btn bg-amber text-ink font-medium rounded-full px-8 py-4 hover:bg-ink hover:text-white justify-self-start">Отправить в WhatsApp</button>
+    <label class="grid gap-2 text-base font-medium">Описание задачи<textarea id="f-text" rows="4" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal text-left" placeholder="Чем занимается компания, для кого, сроки"></textarea></label>
+    <button id="send" class="btn bg-amber text-ink font-medium rounded-full px-8 py-4 hover:bg-ink hover:text-white justify-self-center">Отправить в WhatsApp</button>
   </div>
 </div>
 </section>
@@ -222,19 +199,22 @@ tailwind.config = { theme: { extend: {
 
 <!-- 12. ПОДВАЛ -->
 <footer id="contacts" class="bg-ink text-white">
-  <div class="max-w-6xl mx-auto px-5 py-16 grid md:grid-cols-3 gap-10">
+  <div class="max-w-6xl mx-auto px-5 py-14 md:py-16 flex flex-col md:flex-row md:justify-between gap-10">
     <div>
-      <p class="font-display font-semibold text-xl">asanali<span class="text-amber">.</span>design</p>
-      <p class="mt-3 text-white/70 text-sm">Логотипы, фирменный стиль и нейминг. Если остались вопросы, пишите, обсудим все детали.</p>
+      <h3 class="text-xl font-semibold">Контакты</h3>
+      <address class="not-italic mt-5 space-y-2 text-lg text-white/85">
+        <p><a class="hover:text-amber" href="tel:+77071591625">+7 707 159 1625</a></p>
+        <p><a class="hover:text-amber" href="mailto:shamgunasanali@gmail.com">shamgunasanali@gmail.com</a></p>
+      </address>
     </div>
-    <address class="not-italic text-white/85 space-y-2">
-      <p><a class="hover:text-amber" href="tel:+77071591625">+7 707 159 1625</a></p>
-      <p><a class="hover:text-amber" href="mailto:shamgunasanali@gmail.com">shamgunasanali@gmail.com</a></p>
-    </address>
-    <div class="flex flex-wrap gap-3 content-start md:justify-end">
-      <a href="https://t.me/asanalidesign" target="_blank" rel="noopener" class="btn rounded-full border border-white/30 px-5 py-2.5 text-sm hover:bg-white hover:text-ink">Telegram</a>
-      <a href="https://instagram.com/asanali.design" target="_blank" rel="noopener" class="btn rounded-full border border-white/30 px-5 py-2.5 text-sm hover:bg-white hover:text-ink">Instagram</a>
-      <a id="wa-footer" href="#" target="_blank" rel="noopener" class="btn rounded-full border border-white/30 px-5 py-2.5 text-sm hover:bg-white hover:text-ink">WhatsApp</a>
+    <div class="md:text-right">
+      <h3 class="text-xl font-semibold">Соц. сети</h3>
+      <div class="mt-5 flex gap-3 md:justify-end">
+        <a id="wa-footer" href="#" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp" class="btn w-12 h-12 grid place-items-center rounded-full border border-white/30 hover:bg-white hover:text-ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/><path d="M9.2 9.2c.4 1.9 2.4 3.9 4.6 4.6l1.1-1.2-1.7-.9-.7.6c-.7-.3-1.4-1-1.7-1.7l.6-.7-.9-1.7-1.3 1z"/></svg></a>
+        <a href="https://instagram.com/asanali.design" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" class="btn w-12 h-12 grid place-items-center rounded-full border border-white/30 hover:bg-white hover:text-ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://t.me/asanalidesign" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram" class="btn w-12 h-12 grid place-items-center rounded-full border border-white/30 hover:bg-white hover:text-ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></a>
+      </div>
+      <p class="mt-4 text-lg text-white/85">@asanali.design</p>
     </div>
   </div>
   <p class="text-center text-white/50 text-xs pb-8">© 2026 Асанали</p>
@@ -333,6 +313,18 @@ function fitPromise(){
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitPromise);
 window.addEventListener('load',fitPromise); window.addEventListener('resize',fitPromise); fitPromise();
 
+// Блок «70+ клиентов»: подгоняем размер, чтобы строка шла от левого до правого края рамки
+function fitTrust(){
+  const r=document.getElementById('trust-line'); if(!r) return;
+  r.style.fontSize='';
+  if(window.innerWidth<768) return;
+  r.style.fontSize='20px';
+  const W=r.nextElementSibling.clientWidth, w=r.getBoundingClientRect().width;
+  if(w>0) r.style.fontSize=(Math.floor(200*W/w)/10)+'px';
+}
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitTrust);
+window.addEventListener('load',fitTrust); window.addEventListener('resize',fitTrust); fitTrust();
+
 // Портфолио
 const grid = document.getElementById('grid'), filters = document.getElementById('filters');
 function render(cat){
@@ -344,7 +336,7 @@ function render(cat){
   filters.querySelectorAll('button').forEach(b=>{
     const on = b.dataset.cat===cat;
     b.setAttribute('aria-selected', on);
-    b.className = "btn rounded-full px-5 py-2.5 text-sm font-medium border " + (on ? "bg-ink text-white border-ink" : "border-ink/25 hover:bg-ink hover:text-white");
+    b.className = "btn flex-auto text-center rounded-full px-6 py-3.5 text-base md:text-lg font-medium border " + (on ? "bg-ink text-white border-ink" : "border-ink/25 hover:bg-ink hover:text-white");
   });
 }
 filters.innerHTML = CATEGORIES.map(c=>`<button role="tab" data-cat="${c}">${c}</button>`).join('');
@@ -362,25 +354,35 @@ document.getElementById('steps').innerHTML = STEPS.map((s,i)=>`
 document.getElementById('plans').innerHTML = PLANS.map(p=>`
   <article class="tile rounded-3xl p-7 flex flex-col ${p.hit?'bg-ink text-white':'bg-white border border-ink/10'}">
     <h3 class="text-lg font-semibold">${p.name}${p.hit?' <span class="ml-2 align-middle text-xs font-body font-medium bg-amber text-ink rounded-full px-2.5 py-1">популярный</span>':''}</h3>
-    <p class="mt-4 font-display text-2xl font-semibold">${p.price}</p>
-    <p class="mt-1 text-sm ${p.hit?'text-white/70':'text-ink/65'}">Срок: ${p.term}</p>
+    <p class="mt-3 text-sm ${p.hit?'text-white/70':'text-ink/65'}">Срок: ${p.term}</p>
     ${p.pay?`<p class="text-sm ${p.hit?'text-white/70':'text-ink/65'}">${p.pay}</p>`:''}
     ${p.note?`<p class="mt-4 text-sm italic ${p.hit?'text-white/80':'text-ink/70'}">${p.note}</p>`:''}
     <ul class="mt-5 space-y-2 text-sm flex-1">${p.items.map(i=>`<li class="flex gap-2"><span class="${p.hit?'text-amber':'text-clay'} font-bold">✓</span><span>${i}</span></li>`).join('')}</ul>
+    <p class="mt-8 font-bold leading-none text-4xl lg:text-5xl">${p.price.replace(/\s*тенге$/,'')} <span class="text-lg lg:text-xl font-semibold">тенге</span></p>
     <a target="_blank" rel="noopener" href="${wa(`Здравствуйте! Хочу заказать тариф «${p.name}» (${p.price}, срок: ${p.term}).`)}"
-       class="btn mt-8 text-center rounded-full px-6 py-3.5 font-medium ${p.hit?'bg-amber text-ink hover:bg-white':'bg-ink text-white hover:bg-moss'}">Выбрать</a>
+       class="btn mt-5 text-center rounded-full px-6 py-3.5 font-medium ${p.hit?'bg-amber text-ink hover:bg-white':'bg-ink text-white hover:bg-moss'}">Выбрать</a>
   </article>`).join('');
 
-// Отзывы
-const slider = document.getElementById('slider');
-slider.innerHTML = REVIEWS.map(r=>`
-  <figure class="slide shrink-0 w-[88%] md:w-[calc(50%-12px)] rounded-3xl bg-white p-8">
-    <blockquote class="leading-relaxed text-ink/90">${r.text}</blockquote>
-    <figcaption class="mt-6 text-sm"><span class="font-semibold">${r.name}</span><br><span class="text-ink/65">${r.role}</span></figcaption>
+// Отзывы: по одному, листаем стрелками или свайпом
+const track = document.getElementById('track');
+track.innerHTML = REVIEWS.map(r=>`
+  <figure class="w-full shrink-0 rounded-3xl bg-white p-8 md:p-12 flex flex-col justify-center text-center">
+    <blockquote class="text-lg md:text-xl leading-relaxed text-ink/90">${r.text}</blockquote>
+    <figcaption class="mt-8"><span class="font-semibold">${r.name}</span><br><span class="text-sm text-ink/65">${r.role}</span></figcaption>
   </figure>`).join('');
-const step = () => slider.firstElementChild.getBoundingClientRect().width + 24;
-document.getElementById('next').onclick = () => slider.scrollBy({left: step(), behavior:'smooth'});
-document.getElementById('prev').onclick = () => slider.scrollBy({left: -step(), behavior:'smooth'});
+let ri = 0;
+const prevB = document.getElementById('prev'), nextB = document.getElementById('next');
+function showReview(i){
+  ri = Math.max(0, Math.min(REVIEWS.length-1, i));
+  track.style.transform = `translateX(-${ri*100}%)`;
+  prevB.disabled = ri===0; nextB.disabled = ri===REVIEWS.length-1;
+}
+prevB.onclick = () => showReview(ri-1);
+nextB.onclick = () => showReview(ri+1);
+let tx = null; const sl = document.getElementById('slider');
+sl.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+sl.addEventListener('touchend', e => { if(tx===null) return; const d = e.changedTouches[0].clientX - tx; if(Math.abs(d)>50) showReview(ri + (d<0?1:-1)); tx = null; });
+showReview(0);
 
 // Форма -> WhatsApp
 document.getElementById('send').onclick = () => {
