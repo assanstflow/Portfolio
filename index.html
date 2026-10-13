@@ -41,16 +41,16 @@ tailwind.config = { theme: { extend: {
 
 <!-- 2. ШАПКА -->
 <header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-ink/10">
-  <div class="max-w-6xl mx-auto px-5 h-20 flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between">
-    <a id="logo" href="#top" class="font-display font-bold text-xl justify-self-start">asanali<span class="text-amber">.</span>design</a>
+  <div class="max-w-6xl mx-auto px-5 h-16 lg:h-20 flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between">
+    <a id="logo" href="#top" class="font-display font-bold text-lg lg:text-xl justify-self-start">asanali<span class="text-amber">.</span>design</a>
     <nav class="hidden lg:flex gap-10 text-lg font-medium">
       <a href="#works" class="hover:text-clay">Проекты</a>
       <a href="#services" class="hover:text-clay">Услуги</a>
       <a href="#pricing" class="hover:text-clay">Тарифы</a>
       <a href="#contacts" class="hover:text-clay">Контакты</a>
     </nav>
-    <div class="flex items-center gap-3 justify-self-end">
-      <a id="hdr-cta" href="#order" class="btn bg-ink text-white text-base font-medium rounded-full px-6 py-3 text-center hover:bg-moss">Заказать</a>
+    <div class="flex items-center gap-2 lg:gap-3 justify-self-end">
+      <a id="hdr-cta" href="#order" class="btn bg-ink text-white font-medium rounded-full text-sm px-4 py-2.5 lg:text-base lg:px-6 lg:py-3 text-center hover:bg-moss">Заказать</a>
       <button id="burger" class="lg:hidden p-2" aria-label="Меню" aria-expanded="false">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 17h18"/></svg>
       </button>
@@ -63,28 +63,33 @@ tailwind.config = { theme: { extend: {
 
 <main id="top">
 
-<!-- 3. ПЕРВЫЙ БЛОК: приветствие и фото -->
-<section class="bg-paper">
- <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+<!-- 3. ПЕРВЫЙ БЛОК: приветствие и фото (тёмный фон, контраст со светлой шапкой) -->
+<section class="bg-ink text-white">
+ <div class="max-w-6xl mx-auto px-5 py-14 md:py-24 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
   <div>
     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">Приветствую вас,<br class="hidden sm:block"> меня зовут Асанали!</h1>
-    <p class="mt-6 text-lg text-ink/75 max-w-md">Создаю уникальные и качественные визуальные решения, которые помогут повысить узнаваемость бренда</p>
-    <div class="mt-9 flex flex-wrap gap-4">
-      <a href="#order" class="btn bg-amber text-ink font-medium rounded-full px-8 py-4 hover:bg-ink hover:text-white">Заказать</a>
-      <a href="#works" class="btn border border-ink/25 font-medium rounded-full px-8 py-4 hover:bg-ink hover:text-white">Смотреть проекты</a>
+    <p class="mt-6 text-lg text-white/80 max-w-md">Создаю уникальные и качественные визуальные решения, которые помогут повысить узнаваемость бренда</p>
+    <div class="mt-9 flex flex-col sm:flex-row gap-4">
+      <a href="#order" class="btn bg-amber text-ink font-medium text-center rounded-full px-8 py-4 hover:bg-white">Заказать</a>
+      <a href="#works" class="btn border border-white/35 font-medium text-center rounded-full px-8 py-4 hover:bg-white hover:text-ink">Смотреть проекты</a>
     </div>
   </div>
-  <img src="images/asanali.jpg" alt="Асанали, графический дизайнер" class="w-full max-w-md md:max-w-none md:ml-auto aspect-[9/10] object-cover object-top rounded-[2rem]">
+  <img src="images/asanali.jpg" alt="Асанали, графический дизайнер" class="w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[9/10] object-cover object-top rounded-[2rem]">
  </div>
 </section>
 
-<!-- 4. ТЁМНЫЙ БЛОК: обещание и цифры -->
-<section class="bg-ink text-white">
+<!-- 4. БЛОК-ОБЕЩАНИЕ: заголовок подгоняется под ширину рамки, плашки по краям текста -->
+<section class="bg-paper">
  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight">Разработаю логотип и айдентику, которые помогут вашему бренду выделиться среди конкурентов и приносить вам клиентов ВСЕГДА!</h2>
-  <div class="mt-12 grid sm:grid-cols-2 gap-4 md:gap-6">
-    <p class="rounded-2xl bg-white text-ink text-center text-lg md:text-xl font-semibold px-8 py-6">3 года опыта</p>
-    <p class="rounded-2xl bg-white text-ink text-center text-lg md:text-xl font-semibold px-8 py-6">70+ успешных проектов</p>
+  <h2 id="promise" class="text-3xl sm:text-4xl font-semibold leading-[1.25]">
+   <span class="md:block md:w-max md:whitespace-nowrap">Разработаю логотип и айдентику,</span>
+   <span class="md:block md:w-max md:whitespace-nowrap">которые помогут вашему бренду</span>
+   <span class="md:block md:w-max md:whitespace-nowrap">выделиться среди конкурентов и</span>
+   <span class="md:block md:w-max md:whitespace-nowrap">приносить вам клиентов ВСЕГДА!</span>
+  </h2>
+  <div class="mt-10 md:mt-12 grid sm:grid-cols-2 gap-4 md:gap-6">
+    <p class="rounded-2xl bg-ink text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold px-6 py-6 md:py-8">3 года опыта</p>
+    <p class="rounded-2xl bg-ink text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold px-6 py-6 md:py-8">70+ успешных проектов</p>
   </div>
  </div>
 </section>
@@ -93,10 +98,10 @@ tailwind.config = { theme: { extend: {
 <section class="bg-fog">
  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
   <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
-    <p class="text-8xl sm:text-9xl font-bold leading-none">70+</p>
+    <p class="text-7xl sm:text-8xl font-bold leading-none">70+</p>
     <p class="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug">довольных клиентов по всему Казахстану</p>
   </div>
-  <p class="mt-10 text-lg lg:text-xl text-ink/75">Работаю с разными стилистиками. Создаю дизайн как и для детских магазинов, так и для крупных компаний с премиальным сегментом товаров или услуг</p>
+  <p class="mt-10 text-xl sm:text-2xl leading-relaxed text-ink/75">Работаю с разными стилистиками. Создаю дизайн как и для детских магазинов, так и для крупных компаний с премиальным сегментом товаров или услуг</p>
  </div>
 </section>
 
@@ -198,7 +203,7 @@ tailwind.config = { theme: { extend: {
 </section>
 
 <!-- ФОРМА ЗАКАЗА -->
-<section id="order" class="max-w-3xl mx-auto px-5 py-20">
+<section id="order" class="max-w-6xl mx-auto px-5 py-20"><div class="max-w-2xl">
   <h2 class="text-3xl md:text-4xl font-semibold">Расскажите о проекте</h2>
   <p class="mt-3 text-ink/75">Заполните поля, и черновик сообщения откроется в WhatsApp.</p>
   <div class="mt-8 grid gap-4">
@@ -210,6 +215,7 @@ tailwind.config = { theme: { extend: {
     <label class="grid gap-1 text-sm font-medium">Описание задачи<textarea id="f-text" rows="4" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal" placeholder="Чем занимается компания, для кого, сроки"></textarea></label>
     <button id="send" class="btn bg-amber text-ink font-medium rounded-full px-8 py-4 hover:bg-ink hover:text-white justify-self-start">Отправить в WhatsApp</button>
   </div>
+</div>
 </section>
 
 </main>
@@ -225,7 +231,7 @@ tailwind.config = { theme: { extend: {
       <p><a class="hover:text-amber" href="tel:+77071591625">+7 707 159 1625</a></p>
       <p><a class="hover:text-amber" href="mailto:shamgunasanali@gmail.com">shamgunasanali@gmail.com</a></p>
     </address>
-    <div class="flex flex-wrap gap-3 content-start">
+    <div class="flex flex-wrap gap-3 content-start md:justify-end">
       <a href="https://t.me/asanalidesign" target="_blank" rel="noopener" class="btn rounded-full border border-white/30 px-5 py-2.5 text-sm hover:bg-white hover:text-ink">Telegram</a>
       <a href="https://instagram.com/asanali.design" target="_blank" rel="noopener" class="btn rounded-full border border-white/30 px-5 py-2.5 text-sm hover:bg-white hover:text-ink">Instagram</a>
       <a id="wa-footer" href="#" target="_blank" rel="noopener" class="btn rounded-full border border-white/30 px-5 py-2.5 text-sm hover:bg-white hover:text-ink">WhatsApp</a>
@@ -312,6 +318,20 @@ function eqHeader(){
 }
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(eqHeader);
 window.addEventListener('load',eqHeader); window.addEventListener('resize',eqHeader); eqHeader();
+
+
+// Заголовок-обещание: подгоняем размер, чтобы самая длинная строка доходила до правого края рамки
+function fitPromise(){
+  const h=document.getElementById('promise'); if(!h) return;
+  h.style.fontSize='';
+  if(window.innerWidth<768) return;
+  h.style.fontSize='100px';
+  const W=h.clientWidth; let m=0;
+  h.querySelectorAll('span').forEach(el=>{ m=Math.max(m,el.getBoundingClientRect().width); });
+  if(m>0) h.style.fontSize=(Math.floor(1000*W/m)/10)+'px';
+}
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitPromise);
+window.addEventListener('load',fitPromise); window.addEventListener('resize',fitPromise); fitPromise();
 
 // Портфолио
 const grid = document.getElementById('grid'), filters = document.getElementById('filters');
