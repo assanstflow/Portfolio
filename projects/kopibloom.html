@@ -73,5 +73,13 @@ tailwind.config = { theme: { extend: {
   </div>
   <p class="text-center text-white/50 text-xs pb-8">© 2026 Асанали</p>
 </footer>
+<script>
+(function(){
+  var SHORT=['в','во','к','ко','с','со','у','о','об','от','до','на','по','за','из','без','для','при','про','под','над','и','а','но','да','или','не','ни','что','как','так'];
+  var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n,a=[];
+  while(n=w.nextNode()){ if(['SCRIPT','STYLE'].indexOf(n.parentNode.nodeName)<0&&n.nodeValue.trim()) a.push(n); }
+  a.forEach(function(t){ t.nodeValue=t.nodeValue.replace(/(\S+)([ \t\n]+)/g,function(m,x){ return SHORT.indexOf(x.toLowerCase().replace(/^[«"(]+/,''))>-1 ? x+'\u00A0' : m; }); });
+})();
+</script>
 </body>
 </html>
