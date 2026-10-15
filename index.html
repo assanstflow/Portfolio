@@ -331,7 +331,7 @@ window.addEventListener('load',fitTrust); window.addEventListener('resize',fitTr
 const grid = document.getElementById('grid'), filters = document.getElementById('filters');
 function render(cat){
   grid.innerHTML = WORKS.filter(w => cat==="Все"||w.cat===cat).map(w=>`
-    <a href="projects/${w.img}.html" class="tile block rounded-3xl bg-white border border-ink/10 overflow-hidden" aria-label="Открыть проект ${w.title}">
+    <a href="projects/${w.img}.html" class="tile block rounded-3xl bg-white text-ink border border-ink/10 overflow-hidden" aria-label="Открыть проект ${w.title}">
       <img src="images/covers/${w.img}.jpg" alt="Логотип ${w.title}" loading="lazy" class="w-full aspect-[3/2] object-cover">
       <div class="p-6"><h3 class="text-lg font-semibold">${w.title}</h3><p class="mt-1 text-sm text-ink/70">${w.desc}</p></div>
     </a>`).join('');
@@ -353,7 +353,7 @@ document.getElementById('steps').innerHTML = STEPS.map((s,i)=>`
   </li>`).join('');
 
 // Тарифы
-const TENGE = '<svg role="img" aria-label="тенге" class="inline-block" style="height:.72em;width:.625em;margin-left:.2em" viewBox="0 0 66 76" fill="currentColor"><rect width="66" height="11"/><rect y="21" width="66" height="11"/><rect x="23" y="21" width="20" height="55"/></svg>';
+const TENGE = '<svg role="img" aria-label="тенге" class="inline-block" style="vertical-align:baseline;height:.7em;width:.608em;margin-left:.2em" viewBox="0 0 66 76" fill="currentColor"><rect width="66" height="13"/><rect y="21" width="66" height="13"/><rect x="23" y="21" width="20" height="55"/></svg>';
 document.getElementById('plans').innerHTML = PLANS.map(p=>`
   <article class="tile rounded-3xl p-7 flex flex-col ${p.hit?'bg-ink text-white':'bg-white border border-ink/10'}">
     <h3 class="text-lg font-semibold">${p.name}${p.hit?' <span class="ml-2 align-middle text-xs font-body font-medium bg-amber text-ink rounded-full px-2.5 py-1">популярный</span>':''}</h3>
