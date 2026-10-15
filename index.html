@@ -110,11 +110,9 @@ tailwind.config = { theme: { extend: {
  <div class="max-w-6xl mx-auto px-5 py-20">
   <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold">Проекты</h2>
   <p class="mt-4 text-lg md:text-xl text-white/75">Работаю в разных стилях и техниках, чтобы дизайн работал именно на ваш бренд. Нажмите на проект, чтобы открыть его страницу.</p>
-  <div id="filters" class="mt-8 flex flex-wrap gap-3" role="tablist"></div>
-  <div id="grid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-  <div class="mt-10 text-center">
-    <a href="https://instagram.com/asanali.design" target="_blank" rel="noopener" class="btn inline-block border border-white/30 text-white rounded-full px-8 py-4 font-medium hover:bg-white hover:text-ink">Больше проектов в Instagram</a>
-  </div>
+  <div id="filters" class="mt-8 flex flex-wrap gap-3" aria-label="Категории проектов"></div>
+  <div id="grid" class="mt-12 grid sm:grid-cols-2 gap-x-6 md:gap-x-8 gap-y-10 md:gap-y-14"></div>
+  <a href="all-projects.html" class="btn mt-12 md:mt-14 block w-full text-center bg-amber text-ink text-lg font-medium rounded-full px-8 py-5 hover:bg-white">Больше проектов</a>
  </div>
 </section>
 
@@ -327,23 +325,21 @@ function fitTrust(){
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitTrust);
 window.addEventListener('load',fitTrust); window.addEventListener('resize',fitTrust); fitTrust();
 
-// Портфолио
-const grid = document.getElementById('grid'), filters = document.getElementById('filters');
-function render(cat){
-  grid.innerHTML = WORKS.filter(w => cat==="Все"||w.cat===cat).map(w=>`
-    <a href="projects/${w.img}.html" class="tile block rounded-3xl bg-white text-ink border border-ink/10 overflow-hidden" aria-label="Открыть проект ${w.title}">
-      <img src="images/covers/${w.img}.jpg" alt="Логотип ${w.title}" loading="lazy" class="w-full aspect-[3/2] object-cover">
-      <div class="p-6"><h3 class="text-lg font-semibold">${w.title}</h3><p class="mt-1 text-sm text-ink/70">${w.desc}</p></div>
-    </a>`).join('');
-  filters.querySelectorAll('button').forEach(b=>{
-    const on = b.dataset.cat===cat;
-    b.setAttribute('aria-selected', on);
-    b.className = "btn flex-auto text-center rounded-full px-6 py-3.5 text-base md:text-lg font-medium border " + (on ? "bg-white text-ink border-white" : "border-white/30 text-white hover:bg-white hover:text-ink");
-  });
-}
-filters.innerHTML = CATEGORIES.map(c=>`<button role="tab" data-cat="${c}">${c}</button>`).join('');
-filters.onclick = e => { const b = e.target.closest('button'); if(b) render(b.dataset.cat); };
-render("Все");
+// Портфолио: на главной 6 избранных проектов, категории ведут на страницу всех проектов
+const FEATURED = ['asyl-nan','sayaruh','sport-project','la-moka','eleuken','qazyna'];
+const workCard = w => `
+  <a href="projects/${w.img}.html" class="group block" aria-label="Открыть проект ${w.title}">
+    <div class="overflow-hidden rounded-3xl">
+      <img src="images/covers/${w.img}.jpg" alt="Логотип ${w.title}" loading="lazy" class="w-full aspect-[17/10] object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+    </div>
+    <h3 class="mt-5 text-xl md:text-2xl font-semibold">${w.title}</h3>
+    <p class="mt-1 text-white/70">${w.desc}</p>
+  </a>`;
+document.getElementById('grid').innerHTML = FEATURED.map(id => workCard(WORKS.find(w => w.img===id))).join('');
+const chip = "btn flex-auto text-center rounded-full px-6 py-3.5 text-base md:text-lg font-medium border ";
+document.getElementById('filters').innerHTML = CATEGORIES.map((c,i) => i===0
+  ? `<span class="${chip}bg-white text-ink border-white" aria-current="true">${c}</span>`
+  : `<a href="all-projects.html?cat=${encodeURIComponent(c)}" class="${chip}border-white/30 text-white hover:bg-white hover:text-ink">${c}</a>`).join('');
 
 // Этапы
 document.getElementById('steps').innerHTML = STEPS.map((s,i)=>`
