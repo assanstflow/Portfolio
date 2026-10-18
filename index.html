@@ -225,21 +225,26 @@ tailwind.config = { theme: { extend: {
 /* ===== НАСТРОЙКИ ===== */
 const WHATSAPP = "77071591625";
 
-const CATEGORIES = ["Все","Еда и напитки","Сервис и услуги","Строительство","Техника и производство","Спорт"];
+const CATEGORIES = ["Все","Еда и напитки","Сервис и услуги","Строительство","Техника и производство","Красота и здоровье","Спорт"];
 
-const WORKS = [ // img — файл в папке images, title, desc, cat
-  {img:"asyl-nan",      title:"Asyl Nan",           desc:"Логотип и фирменный стиль пекарни",              cat:"Еда и напитки"},
-  {img:"sayaruh",       title:"Sayaruh Detailing",  desc:"Логотип и фирменный стиль детейлинг-центра",     cat:"Сервис и услуги"},
-  {img:"sport-project", title:"Sport Project",      desc:"Логотип и фирменный стиль спортивного проекта",  cat:"Спорт"},
-  {img:"sweet-party",   title:"Sweet Party",        desc:"Логотип и фирменный стиль",                      cat:"Еда и напитки"},
-  {img:"la-moka",       title:"La Moka",            desc:"Логотип и фирменный стиль кофейни",              cat:"Еда и напитки"},
-  {img:"luna",          title:"Luna",               desc:"Логотип и фирменный стиль",                      cat:"Еда и напитки"},
-  {img:"basbarmaq",     title:"Basbarmaq",          desc:"Логотип и фирменный стиль фастфуда",             cat:"Еда и напитки"},
-  {img:"eleuken",       title:"Eleuken",            desc:"Логотип и стиль бренда электро и бытовой техники", cat:"Техника и производство"},
-  {img:"shaddi-eco",    title:"Shaddi Eco",         desc:"Логотип и стиль экологичной продукции",          cat:"Техника и производство"},
-  {img:"qazyna",        title:"Qazyna Constructions", desc:"Логотип и фирменный стиль строительной компании", cat:"Строительство"},
-  {img:"kopibloom",     title:"Kopibloom",          desc:"Логотип и фирменный стиль кофейни-пекарни",      cat:"Еда и напитки"},
-  {img:"madi-security", title:"Madi Security",      desc:"Логотип и фирменный стиль охранного агентства",  cat:"Сервис и услуги"}
+const WORKS = [ // img — файл в папке images/covers, title, desc, cat
+  {img:"mastermag", title:"Mastermag", desc:"Логотип для строительной компании", cat:"Строительство"},
+  {img:"jylu", title:"Jylu", desc:"Логотип для кофейни-пекарни", cat:"Еда и напитки"},
+  {img:"shaddi-eco", title:"Shaddi Eco", desc:"Айдентика для эко компании", cat:"Техника и производство"},
+  {img:"bereke-st", title:"Береке СТ", desc:"Логотип для транспортной компании", cat:"Сервис и услуги"},
+  {img:"demia", title:"Demia", desc:"Логотип для бренда декоративной косметики", cat:"Красота и здоровье"},
+  {img:"mager-tech", title:"Mager Tech", desc:"Логотип для услуг автоматизированных ворот", cat:"Техника и производство"},
+  {img:"asyl-nan", title:"Asyl Nan", desc:"Логотип и фирменный стиль пекарни", cat:"Еда и напитки"},
+  {img:"sayaruh", title:"Sayaruh Detailing", desc:"Логотип и фирменный стиль детейлинг-центра", cat:"Сервис и услуги"},
+  {img:"sport-project", title:"Sport Project", desc:"Логотип и фирменный стиль спортивного проекта", cat:"Спорт"},
+  {img:"la-moka", title:"La Moka", desc:"Логотип и фирменный стиль кофейни", cat:"Еда и напитки"},
+  {img:"eleuken", title:"Eleuken", desc:"Логотип и стиль бренда электро и бытовой техники", cat:"Техника и производство"},
+  {img:"qazyna", title:"Qazyna Constructions", desc:"Логотип и фирменный стиль строительной компании", cat:"Строительство"},
+  {img:"sweet-party", title:"Sweet Party", desc:"Логотип и фирменный стиль", cat:"Еда и напитки"},
+  {img:"luna", title:"Luna", desc:"Логотип и фирменный стиль", cat:"Еда и напитки"},
+  {img:"basbarmaq", title:"Basbarmaq", desc:"Логотип и фирменный стиль фастфуда", cat:"Еда и напитки"},
+  {img:"kopibloom", title:"Kopibloom", desc:"Логотип и фирменный стиль кофейни-пекарни", cat:"Еда и напитки"},
+  {img:"madi-security", title:"Madi Security", desc:"Логотип и фирменный стиль охранного агентства", cat:"Сервис и услуги"}
 ];
 
 const STEPS = [
@@ -327,7 +332,7 @@ if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitTrust);
 window.addEventListener('load',fitTrust); window.addEventListener('resize',fitTrust); fitTrust();
 
 // Портфолио: на главной 6 избранных проектов, категории ведут на страницу всех проектов
-const FEATURED = ['asyl-nan','sayaruh','sport-project','la-moka','eleuken','qazyna'];
+const FEATURED = ['mastermag','jylu','shaddi-eco','bereke-st','demia','mager-tech'];
 const workCard = w => `
   <a href="projects/${w.img}.html" class="group block" aria-label="Открыть проект ${w.title}">
     <div class="overflow-hidden rounded-3xl">

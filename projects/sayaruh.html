@@ -19,16 +19,31 @@ tailwind.config = { theme: { extend: {
   body{font-family:'Montserrat',sans-serif;background:#F3F6F4;color:#0B3B2E}
   h1,h2,h3{letter-spacing:-.02em}
   :focus-visible{outline:2px solid #E0A15F;outline-offset:3px}
+  html{scroll-padding-top:96px}
   .btn{transition:background .25s,color .25s,transform .25s}
   .btn:hover{transform:translateY(-2px)}
 </style>
 </head>
 <body>
-<header class="bg-paper border-b border-ink/10">
-  <div class="max-w-6xl mx-auto px-5 h-16 lg:h-20 flex items-center justify-between">
-    <a href="../index.html" class="font-bold text-lg lg:text-xl">asanali<span class="text-amber">.</span>design</a>
-    <a href="../all-projects.html" class="btn border border-ink/25 rounded-full px-4 py-2.5 text-sm lg:px-6 lg:py-3 lg:text-base font-medium hover:bg-ink hover:text-white">Все проекты</a>
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-ink/10">
+  <div class="max-w-6xl mx-auto px-5 h-16 lg:h-20 flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between">
+    <a id="logo" href="../index.html" class="font-display font-bold text-lg lg:text-xl justify-self-start">asanali<span class="text-amber">.</span>design</a>
+    <nav class="hidden lg:flex gap-10 text-lg font-medium">
+      <a href="../all-projects.html" class="hover:text-clay">Проекты</a>
+      <a href="../index.html#services" class="hover:text-clay">Услуги</a>
+      <a href="../index.html#pricing" class="hover:text-clay">Тарифы</a>
+      <a href="#contacts" class="hover:text-clay">Контакты</a>
+    </nav>
+    <div class="flex items-center gap-2 lg:gap-3 justify-self-end">
+      <a id="hdr-cta" href="../index.html#order" class="btn bg-ink text-white font-medium rounded-full text-sm px-4 py-2.5 lg:text-base lg:px-6 lg:py-3 text-center hover:bg-moss">Заказать</a>
+      <button id="burger" class="lg:hidden p-2" aria-label="Меню" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 17h18"/></svg>
+      </button>
+    </div>
   </div>
+  <nav id="mobnav" class="hidden lg:hidden border-t border-ink/10 px-5 py-3 flex flex-col gap-3 text-base">
+    <a href="../all-projects.html">Проекты</a><a href="../index.html#services">Услуги</a><a href="../index.html#pricing">Тарифы</a><a href="#contacts">Контакты</a>
+  </nav>
 </header>
 
 <main class="max-w-6xl mx-auto px-5 py-10 md:py-16">
@@ -42,7 +57,7 @@ tailwind.config = { theme: { extend: {
       <a target="_blank" rel="noopener" href="https://wa.me/77071591625?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9C%D0%BD%D0%B5%20%D0%BF%D0%BE%D0%BD%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%81%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%C2%ABSayaruh%20Detailing%C2%BB%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%81%D0%B2%D0%BE%D0%B9." class="btn mt-8 block sm:inline-block text-center bg-amber text-ink font-medium rounded-full px-8 py-4 hover:bg-ink hover:text-white">Заказать похожий проект</a>
     </div>
     <div class="md:col-span-7">
-      <img src="../images/sayaruh.jpg" alt="Проект Sayaruh Detailing: логотип и применение в фирменном стиле" class="w-full md:max-w-lg md:ml-auto rounded-3xl">
+      <img src="../images/sayaruh.jpg" alt="Проект Sayaruh Detailing" class="w-full md:max-w-lg md:ml-auto rounded-3xl">
     </div>
   </div>
 
@@ -52,7 +67,7 @@ tailwind.config = { theme: { extend: {
   </nav>
 </main>
 
-<footer class="bg-ink text-white">
+<footer id="contacts" class="bg-ink text-white">
   <div class="max-w-6xl mx-auto px-5 py-14 md:py-16 flex flex-col md:flex-row md:justify-between gap-10">
     <div>
       <h3 class="text-xl font-semibold">Контакты</h3>
@@ -73,6 +88,19 @@ tailwind.config = { theme: { extend: {
   </div>
   <p class="text-center text-white/50 text-xs pb-8">© 2026 Асанали</p>
 </footer>
+<script>
+(function(){
+  var burger=document.getElementById('burger'), mob=document.getElementById('mobnav');
+  burger.onclick=function(){ var o=mob.classList.toggle('hidden'); burger.setAttribute('aria-expanded', String(!o)); };
+  mob.querySelectorAll('a').forEach(function(a){ a.onclick=function(){ mob.classList.add('hidden'); }; });
+  function eqHeader(){
+    var l=document.getElementById('logo'), b=document.getElementById('hdr-cta');
+    b.style.width=''; if(window.innerWidth>=1024) b.style.width=l.offsetWidth+'px';
+  }
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(eqHeader);
+  window.addEventListener('load',eqHeader); window.addEventListener('resize',eqHeader); eqHeader();
+})();
+</script>
 <script>
 (function(){
   var SHORT=['в','во','к','ко','с','со','у','о','об','от','до','на','по','за','из','без','для','при','про','под','над','и','а','но','да','или','не','ни','что','как','так'];
