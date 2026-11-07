@@ -20,6 +20,22 @@ tailwind.config = { theme: { extend: {
   h1,h2,h3,.font-display{font-family:'Montserrat',sans-serif;letter-spacing:-.02em}
   :focus-visible{outline:2px solid #E0A15F;outline-offset:3px}
   html{scroll-padding-top:96px}
+  /* форма заказа: плавающие подписи, одинаковые поля, плашки выбора услуги */
+  .fld{position:relative;text-align:left}
+  .fld input,.fld textarea{width:100%;color:#fff;font:inherit;font-size:16px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.16);outline:none;transition:border-color .2s,background .2s}
+  .fld input{height:64px;border-radius:32px;padding:24px 24px 6px}
+  .fld textarea{min-height:150px;border-radius:28px;padding:30px 24px 12px;line-height:1.5;resize:vertical;display:block}
+  .fld label{position:absolute;left:25px;top:20px;font-size:16px;color:rgba(255,255,255,.62);pointer-events:none;transition:top .18s ease,font-size .18s ease,color .18s ease}
+  .fld input:focus,.fld textarea:focus{border-color:#E0A15F;background:rgba(255,255,255,.12)}
+  .fld input:focus~label,.fld textarea:focus~label,.fld input:not(:placeholder-shown)~label,.fld textarea:not(:placeholder-shown)~label{top:9px;font-size:12px;color:#E0A15F}
+  .fld .msg{display:none;margin:8px 0 0 24px;font-size:14px;color:#FFB59F}
+  .fld.err input,.fld.err textarea{border-color:#FF9B7A}
+  .fld.err .msg{display:block}
+  .chip{cursor:pointer}
+  .chip span{display:block;padding:14px 22px;border-radius:9999px;border:1.5px solid rgba(255,255,255,.22);color:#fff;font-weight:500;transition:background .2s,color .2s,border-color .2s}
+  .chip:hover span{border-color:rgba(255,255,255,.5)}
+  .chip input:checked+span{background:#E0A15F;border-color:#E0A15F;color:#0B3B2E}
+  .chip input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
   .tile{transition:transform .35s ease, box-shadow .35s ease}
   .tile:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px rgba(11,59,46,.5)}
   .btn{transition:background .25s,color .25s,transform .25s}
@@ -181,18 +197,30 @@ tailwind.config = { theme: { extend: {
 </section>
 
 <!-- ФОРМА ЗАКАЗА -->
-<section id="order" class="max-w-6xl mx-auto px-5 py-20"><div class="max-w-2xl mx-auto text-center">
-  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold">Расскажите о проекте</h2>
-  <p class="mt-4 text-lg md:text-xl text-ink/75">Заполните поля, и черновик сообщения откроется в WhatsApp.</p>
-  <div class="mt-8 grid gap-4">
-    <label class="grid gap-2 text-base font-medium">Имя<input id="f-name" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal text-left" placeholder="Как к вам обращаться"></label>
-    <label class="grid gap-2 text-base font-medium">Что нужно сделать
-      <select id="f-service" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal text-left">
-        <option>Логотип</option><option>Фирменный стиль</option><option>Нейминг</option><option>Пока не знаю</option>
-      </select></label>
-    <label class="grid gap-2 text-base font-medium">Описание задачи<textarea id="f-text" rows="4" class="rounded-xl border border-ink/20 bg-white px-4 py-3 font-normal text-left" placeholder="Чем занимается компания, для кого, сроки"></textarea></label>
-    <button id="send" class="btn bg-amber text-ink font-medium rounded-full px-8 py-4 hover:bg-ink hover:text-white justify-self-center">Отправить в WhatsApp</button>
-  </div>
+<section id="order" class="max-w-6xl mx-auto px-5 py-20"><div class="max-w-2xl mx-auto">
+  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center">Расскажите о проекте</h2>
+  <p class="mt-4 text-lg md:text-xl text-ink/75 text-center">Выберите услугу и напишите пару слов, черновик сообщения откроется в WhatsApp.</p>
+  <form id="order-form" novalidate class="mt-10 rounded-[2rem] md:rounded-[2.5rem] bg-ink text-white p-6 md:p-10 grid gap-4">
+    <div class="fld" id="fld-name">
+      <input id="f-name" name="name" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next" placeholder=" " aria-describedby="err-name">
+      <label for="f-name">Ваше имя</label>
+      <p class="msg" id="err-name" role="alert">Введите имя, чтобы я знал, как к вам обращаться</p>
+    </div>
+    <fieldset class="mt-2 text-left">
+      <legend class="mb-3 ml-1 text-sm text-white/65">Что нужно сделать</legend>
+      <div class="flex flex-wrap gap-2.5">
+        <label class="chip"><input type="radio" name="service" value="Логотип" class="sr-only" checked><span>Логотип</span></label>
+        <label class="chip"><input type="radio" name="service" value="Фирменный стиль" class="sr-only"><span>Фирменный стиль</span></label>
+        <label class="chip"><input type="radio" name="service" value="Нейминг" class="sr-only"><span>Нейминг</span></label>
+        <label class="chip"><input type="radio" name="service" value="Пока не знаю" class="sr-only"><span>Пока не знаю</span></label>
+      </div>
+    </fieldset>
+    <div class="fld mt-2">
+      <textarea id="f-text" name="task" rows="4" enterkeyhint="enter" placeholder=" "></textarea>
+      <label for="f-text">Описание задачи (по желанию)</label>
+    </div>
+    <button type="submit" class="btn mt-2 w-full h-16 rounded-full bg-amber text-ink text-lg font-semibold inline-flex items-center justify-center gap-3 hover:bg-white"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/><path d="M9.2 9.2c.4 1.9 2.4 3.9 4.6 4.6l1.1-1.2-1.7-.9-.7.6c-.7-.3-1.4-1-1.7-1.7l.6-.7-.9-1.7-1.3 1z"/></svg>Отправить в WhatsApp</button>
+  </form>
 </div>
 </section>
 
@@ -400,13 +428,17 @@ sl.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:
 sl.addEventListener('touchend', e => { if(tx===null) return; const d = e.changedTouches[0].clientX - tx; if(Math.abs(d)>50) showReview(ri + (d<0?1:-1)); tx = null; });
 showReview(0);
 
-// Форма -> WhatsApp
-document.getElementById('send').onclick = () => {
-  const n = document.getElementById('f-name').value.trim() || "—";
-  const s = document.getElementById('f-service').value;
+// Форма -> WhatsApp (с проверкой имени)
+const orderForm = document.getElementById('order-form'), fName = document.getElementById('f-name'), fldName = document.getElementById('fld-name');
+fName.addEventListener('input', () => { if(fName.value.trim().length >= 2) fldName.classList.remove('err'); });
+orderForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const n = fName.value.trim();
+  if(n.length < 2){ fldName.classList.add('err'); fName.focus(); return; }
+  const svc = orderForm.querySelector('input[name="service"]:checked').value;
   const t = document.getElementById('f-text').value.trim() || "—";
-  window.open(wa(`Здравствуйте! Меня зовут ${n}.\nУслуга: ${s}.\nЗадача: ${t}`), '_blank');
-};
+  window.open(wa(`Здравствуйте! Меня зовут ${n}.\nУслуга: ${svc}.\nЗадача: ${t}`), '_blank');
+});
 
 // Типографика: предлоги и союзы не остаются в конце строки, числа не разрываются
 function typo(){
