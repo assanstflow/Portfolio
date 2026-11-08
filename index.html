@@ -23,8 +23,8 @@ tailwind.config = { theme: { extend: {
   /* форма заказа: плавающие подписи, одинаковые поля, плашки выбора услуги */
   .fld{position:relative;text-align:left}
   .fld input,.fld textarea{width:100%;color:#fff;font:inherit;font-size:16px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.16);outline:none;transition:border-color .2s,background .2s}
-  .fld input{height:64px;border-radius:32px;padding:24px 24px 6px}
-  .fld textarea{min-height:150px;border-radius:28px;padding:30px 24px 12px;line-height:1.5;resize:vertical;display:block}
+  .fld input{height:64px;border-radius:15px;padding:24px 24px 6px}
+  .fld textarea{min-height:150px;border-radius:15px;padding:30px 24px 12px;line-height:1.5;resize:vertical;display:block}
   .fld label{position:absolute;left:25px;top:20px;font-size:16px;color:rgba(255,255,255,.62);pointer-events:none;transition:top .18s ease,font-size .18s ease,color .18s ease}
   .fld input:focus,.fld textarea:focus{border-color:#E0A15F;background:rgba(255,255,255,.12)}
   .fld input:focus~label,.fld textarea:focus~label,.fld input:not(:placeholder-shown)~label,.fld textarea:not(:placeholder-shown)~label{top:9px;font-size:12px;color:#E0A15F}
@@ -90,7 +90,7 @@ tailwind.config = { theme: { extend: {
       <a href="#works" class="btn border border-white/35 font-medium text-center rounded-full px-8 py-4 hover:bg-white hover:text-ink">Смотреть проекты</a>
     </div>
   </div>
-  <img src="images/asanali.jpg" alt="Асанали, графический дизайнер" class="w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[9/10] object-cover object-top rounded-[2rem]">
+  <img src="images/asanali.jpg" alt="Асанали, графический дизайнер" class="w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[9/10] object-cover object-top rounded-[15px]">
  </div>
 </section>
 
@@ -104,8 +104,8 @@ tailwind.config = { theme: { extend: {
    <span class="md:block md:w-max md:whitespace-nowrap">приносить вам клиентов ВСЕГДА!</span>
   </h2>
   <div class="mt-10 md:mt-12 grid sm:grid-cols-2 gap-4 md:gap-6">
-    <p class="rounded-2xl bg-ink text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold px-6 py-6 md:py-8">3 года опыта</p>
-    <p class="rounded-2xl bg-ink text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold px-6 py-6 md:py-8">70+ успешных проектов</p>
+    <p class="rounded-[15px] bg-ink text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold px-6 py-6 md:py-8">3 года опыта</p>
+    <p class="rounded-[15px] bg-ink text-white text-center text-xl md:text-2xl lg:text-3xl font-semibold px-6 py-6 md:py-8">70+ успешных проектов</p>
   </div>
  </div>
 </section>
@@ -136,7 +136,7 @@ tailwind.config = { theme: { extend: {
 <section id="services" class="max-w-6xl mx-auto px-5 py-20">
   <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold">Услуги</h2>
   <div class="mt-10 grid md:grid-cols-3 gap-6">
-    <article class="rounded-3xl bg-white border border-ink/10 p-8 flex flex-col">
+    <article class="rounded-[15px] bg-white border border-ink/10 p-8 flex flex-col">
       <h3 class="text-xl font-semibold">Логотип</h3>
       <p class="mt-2 font-medium text-clay">3–21 рабочий день</p>
       <p class="mt-4 text-ink/75">От 1 до 3 вариантов логотипа на выбор, подробная презентация и исходные файлы для веба и печати. На старших тарифах добавляется логобук с правилами использования.</p>
@@ -145,7 +145,7 @@ tailwind.config = { theme: { extend: {
         <li class="flex gap-2"><span class="text-clay font-bold">✓</span><span>Бессрочный доступ к файлам через облако</span></li>
       </ul>
     </article>
-    <article class="rounded-3xl bg-white border border-ink/10 p-8 flex flex-col">
+    <article class="rounded-[15px] bg-white border border-ink/10 p-8 flex flex-col">
       <h3 class="text-xl font-semibold">Фирменный стиль</h3>
       <p class="mt-2 font-medium text-clay">14–30 рабочих дней</p>
       <p class="mt-4 text-ink/75">Дизайн-система: визуальный язык бренда с правилами использования логотипа, цветов и шрифтов. Фирменные носители, оформление Instagram и гайдбук.</p>
@@ -156,7 +156,7 @@ tailwind.config = { theme: { extend: {
         <li class="flex gap-2"><span class="text-clay font-bold">✓</span><span>Уникальную дизайн-систему: логотип, цвета и шрифты в едином образе бренда</span></li>
       </ul>
     </article>
-    <article class="rounded-3xl bg-white border border-ink/10 p-8 flex flex-col">
+    <article class="rounded-[15px] bg-white border border-ink/10 p-8 flex flex-col">
       <h3 class="text-xl font-semibold">Нейминг</h3>
       <p class="mt-2 font-medium text-clay">10–14 дней</p>
       <p class="mt-4 text-ink/75">Анализ конкурентов, генерация и отсев названий, проверка поисковой выдачи и первичная проверка возможности регистрации товарного знака. Презентую 10 названий и помогаю выбрать приоритетное.</p>
@@ -170,7 +170,6 @@ tailwind.config = { theme: { extend: {
     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold">Этапы работы</h2>
     <p class="mt-4 text-lg md:text-xl text-white/75">Предоплата 50%: работа начинается после аванса, оставшиеся 50% вы вносите после утверждения. На тарифах «Экспресс» и «Эконом» предоплата 100%.</p>
     <ol id="steps" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></ol>
-    <a href="https://www.instagram.com/p/DF-bCvxO98Z/" target="_blank" rel="noopener" class="btn mt-10 inline-block rounded-full border border-white/30 px-7 py-3.5 font-medium hover:bg-white hover:text-ink">Смотреть этапы в видео</a>
   </div>
 </section>
 
@@ -187,7 +186,7 @@ tailwind.config = { theme: { extend: {
     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center">Отзывы клиентов</h2>
     <div class="mt-10 grid grid-cols-2 md:grid-cols-[auto_1fr_auto] items-center gap-4 md:gap-6">
       <button id="prev" class="btn order-2 md:order-1 justify-self-start w-12 h-12 rounded-full border border-ink/25 text-2xl leading-none hover:bg-ink hover:text-white disabled:opacity-30 disabled:pointer-events-none" aria-label="Предыдущий отзыв">‹</button>
-      <div id="slider" class="order-1 col-span-2 md:col-span-1 md:order-2 min-w-0 overflow-hidden rounded-3xl">
+      <div id="slider" class="order-1 col-span-2 md:col-span-1 md:order-2 min-w-0 overflow-hidden rounded-[15px]">
         <div id="track" class="flex transition-transform duration-500 ease-out"></div>
       </div>
       <button id="next" class="btn order-3 justify-self-end w-12 h-12 rounded-full border border-ink/25 text-2xl leading-none hover:bg-ink hover:text-white disabled:opacity-30 disabled:pointer-events-none" aria-label="Следующий отзыв">›</button>
@@ -200,7 +199,7 @@ tailwind.config = { theme: { extend: {
 <section id="order" class="max-w-6xl mx-auto px-5 py-20"><div class="max-w-2xl mx-auto">
   <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center">Расскажите о проекте</h2>
   <p class="mt-4 text-lg md:text-xl text-ink/75 text-center">Выберите услугу и напишите пару слов, черновик сообщения откроется в WhatsApp.</p>
-  <form id="order-form" novalidate class="mt-10 rounded-[2rem] md:rounded-[2.5rem] bg-ink text-white p-6 md:p-10 grid gap-4">
+  <form id="order-form" novalidate class="mt-10 rounded-[15px] bg-ink text-white p-6 md:p-10 grid gap-4">
     <div class="fld" id="fld-name">
       <input id="f-name" name="name" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next" placeholder=" " aria-describedby="err-name">
       <label for="f-name">Ваше имя</label>
@@ -238,10 +237,10 @@ tailwind.config = { theme: { extend: {
     </div>
     <div class="md:text-right">
       <h3 class="text-xl font-semibold">Соц. сети</h3>
-      <div class="mt-5 flex gap-3 md:justify-end">
-        <a id="wa-footer" href="#" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp" class="btn w-12 h-12 grid place-items-center rounded-full border border-white/30 hover:bg-white hover:text-ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/><path d="M9.2 9.2c.4 1.9 2.4 3.9 4.6 4.6l1.1-1.2-1.7-.9-.7.6c-.7-.3-1.4-1-1.7-1.7l.6-.7-.9-1.7-1.3 1z"/></svg></a>
-        <a href="https://instagram.com/asanali.design" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" class="btn w-12 h-12 grid place-items-center rounded-full border border-white/30 hover:bg-white hover:text-ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://t.me/asanalidesign" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram" class="btn w-12 h-12 grid place-items-center rounded-full border border-white/30 hover:bg-white hover:text-ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></a>
+      <div class="mt-5 flex gap-6 md:justify-end">
+        <a id="wa-footer" href="#" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp" class="text-white hover:text-amber transition-colors"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+        <a href="https://instagram.com/asanali.design" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" class="text-white hover:text-amber transition-colors"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+        <a href="https://t.me/asanalidesign" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram" class="text-white hover:text-amber transition-colors"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
       </div>
       <p class="mt-4 text-lg text-white/85">@asanali.design</p>
     </div>
@@ -363,7 +362,7 @@ window.addEventListener('load',fitTrust); window.addEventListener('resize',fitTr
 const FEATURED = ['mastermag','jylu','shaddi-eco','bereke-st','demia','mager-tech'];
 const workCard = w => `
   <a href="projects/${w.img}.html" class="group block" aria-label="Открыть проект ${w.title}">
-    <div class="overflow-hidden rounded-3xl">
+    <div class="overflow-hidden rounded-[15px]">
       <img src="images/covers/${w.img}.jpg" alt="Логотип ${w.title}" loading="lazy" class="w-full aspect-[17/10] object-cover transition-transform duration-500 group-hover:scale-[1.03]">
     </div>
     <h3 class="mt-5 text-xl md:text-2xl font-semibold">${w.title}</h3>
@@ -377,15 +376,15 @@ document.getElementById('filters').innerHTML = CATEGORIES.map((c,i) => i===0
 
 // Этапы
 document.getElementById('steps').innerHTML = STEPS.map((s,i)=>`
-  <li class="rounded-3xl border border-white/15 p-6">
-    <span class="font-display text-sm bg-amber text-ink rounded-lg px-2.5 py-1 inline-block">${String(i+1).padStart(2,'0')}</span>
+  <li class="rounded-[15px] border border-white/15 p-6">
+    <span class="font-display text-sm bg-amber text-ink rounded-[15px] px-2.5 py-1 inline-block">${String(i+1).padStart(2,'0')}</span>
     <h3 class="mt-4 text-lg font-semibold">${s[0]}</h3><p class="mt-2 text-sm text-white/75">${s[1]}</p>
   </li>`).join('');
 
 // Тарифы
 const TENGE = '<svg role="img" aria-label="тенге" class="inline-block" style="vertical-align:baseline;height:.7em;width:.608em;margin-left:.2em" viewBox="0 0 66 76" fill="currentColor"><rect width="66" height="13"/><rect y="21" width="66" height="13"/><rect x="23" y="21" width="20" height="55"/></svg>';
 document.getElementById('plans').innerHTML = PLANS.map(p=>`
-  <article class="tile rounded-3xl p-7 flex flex-col ${p.hit?'bg-ink text-white':'bg-white border border-ink/10'}">
+  <article class="tile rounded-[15px] p-7 flex flex-col ${p.hit?'bg-ink text-white':'bg-white border border-ink/10'}">
     <h3 class="text-lg font-semibold">${p.name}${p.hit?' <span class="ml-2 align-middle text-xs font-body font-medium bg-amber text-ink rounded-full px-2.5 py-1">популярный</span>':''}</h3>
     <p class="mt-3 text-sm ${p.hit?'text-white/70':'text-ink/65'}">Срок: ${p.term}</p>
     ${p.note?`<p class="mt-4 text-sm italic ${p.hit?'text-white/80':'text-ink/70'}">${p.note}</p>`:''}
@@ -398,7 +397,7 @@ document.getElementById('plans').innerHTML = PLANS.map(p=>`
 // Отзывы: по одному, листаем стрелками, точками или свайпом
 const track = document.getElementById('track');
 track.innerHTML = REVIEWS.map(r=>`
-  <figure class="w-full shrink-0 rounded-3xl bg-white p-8 md:p-12 text-left">
+  <figure class="w-full shrink-0 rounded-[15px] bg-white p-8 md:p-12 text-left">
     <figcaption class="flex items-center gap-4 md:gap-5">
       <img src="images/reviews/${r.logo}.jpg" alt="Логотип ${r.company}" loading="lazy" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover shrink-0 ring-1 ring-ink/10">
       <div>
