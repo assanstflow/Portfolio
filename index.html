@@ -34,7 +34,7 @@ tailwind.config = { theme: { extend: {
   .chip{cursor:pointer}
   .chip span{display:block;padding:14px 22px;border-radius:9999px;border:1.5px solid rgba(255,255,255,.22);color:#fff;font-weight:500;transition:background .2s,color .2s,border-color .2s}
   .chip:hover span{border-color:rgba(255,255,255,.5)}
-  .chip input:checked+span{background:#E0A15F;border-color:#E0A15F;color:#0B3B2E}
+  .chip input:checked+span{background:#fff;border-color:#fff;color:#0B3B2E}
   .chip input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
   .tile{transition:transform .35s ease, box-shadow .35s ease}
   .tile:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px rgba(11,59,46,.5)}
@@ -198,7 +198,7 @@ tailwind.config = { theme: { extend: {
 <!-- ФОРМА ЗАКАЗА -->
 <section id="order" class="max-w-6xl mx-auto px-5 py-20"><div class="max-w-2xl mx-auto">
   <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center">Расскажите о проекте</h2>
-  <p class="mt-4 text-lg md:text-xl text-ink/75 text-center">Выберите услугу и напишите пару слов, черновик сообщения откроется в WhatsApp.</p>
+  <p class="mt-4 text-lg md:text-xl text-ink/75 text-center">Выберите услугу и напишите пару слов,<br>черновик сообщения откроется в WhatsApp.</p>
   <form id="order-form" novalidate class="mt-10 rounded-[15px] bg-ink text-white p-6 md:p-10 grid gap-4">
     <div class="fld" id="fld-name">
       <input id="f-name" name="name" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next" placeholder=" " aria-describedby="err-name">
@@ -206,19 +206,18 @@ tailwind.config = { theme: { extend: {
       <p class="msg" id="err-name" role="alert">Введите имя, чтобы я знал, как к вам обращаться</p>
     </div>
     <fieldset class="mt-2 text-left">
-      <legend class="mb-3 ml-1 text-sm text-white/65">Что нужно сделать</legend>
+      <legend class="mb-3 ml-1 text-sm text-white/65">Что нужно сделать <span class="text-white/45">· можно выбрать несколько</span></legend>
       <div class="flex flex-wrap gap-2.5">
-        <label class="chip"><input type="radio" name="service" value="Логотип" class="sr-only" checked><span>Логотип</span></label>
-        <label class="chip"><input type="radio" name="service" value="Фирменный стиль" class="sr-only"><span>Фирменный стиль</span></label>
-        <label class="chip"><input type="radio" name="service" value="Нейминг" class="sr-only"><span>Нейминг</span></label>
-        <label class="chip"><input type="radio" name="service" value="Пока не знаю" class="sr-only"><span>Пока не знаю</span></label>
+        <label class="chip"><input type="checkbox" name="service" value="Логотип" class="sr-only"><span>Логотип</span></label>
+        <label class="chip"><input type="checkbox" name="service" value="Брендинг" class="sr-only"><span>Брендинг</span></label>
+        <label class="chip"><input type="checkbox" name="service" value="Нейминг" class="sr-only"><span>Нейминг</span></label>
       </div>
     </fieldset>
     <div class="fld mt-2">
       <textarea id="f-text" name="task" rows="4" enterkeyhint="enter" placeholder=" "></textarea>
       <label for="f-text">Описание задачи (по желанию)</label>
     </div>
-    <button type="submit" class="btn mt-2 w-full h-16 rounded-full bg-amber text-ink text-lg font-semibold inline-flex items-center justify-center gap-3 hover:bg-white"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/><path d="M9.2 9.2c.4 1.9 2.4 3.9 4.6 4.6l1.1-1.2-1.7-.9-.7.6c-.7-.3-1.4-1-1.7-1.7l.6-.7-.9-1.7-1.3 1z"/></svg>Отправить в WhatsApp</button>
+    <button type="submit" class="btn mt-2 w-full h-16 rounded-full bg-white text-ink text-lg font-semibold inline-flex items-center justify-center gap-3 hover:bg-amber"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Отправить в WhatsApp</button>
   </form>
 </div>
 </section>
@@ -299,7 +298,7 @@ const PLANS = [ // name, price, term, pay, note, items
    items:["3 варианта логотипа в разной стилистике","Подробная презентация логотипа","2 бесплатных круга правок","Исходные файлы для веба и печати","Логобук: руководство по использованию логотипа"]},
   {name:"Бизнес", price:"150 000 тенге", term:"14–21 рабочий день",
    items:["3 варианта логотипа в разной стилистике","Подробная презентация логотипа","3 бесплатных круга правок","Исходные файлы для веба и печати","Логобук","На выбор: оформление Instagram (9 постов, 4 шаблона, 3 обложки сторис, 5 иконок хайлайтс) или дизайн до 3 носителей (визитка, бланк, конверт и др.)"]},
-  {name:"Премиум", price:"250 000 тенге", term:"21–30 рабочих дней",
+  {name:"Брендинг", price:"250 000 тенге", term:"21–30 рабочих дней",
    note:"Бренд создаётся для людей:<br>аудитория — ядро вашего бренда.",
    items:["Платформа бренда: аудит, преимущества продукта, ценности, характер и голос, суть бренда","3 уникальных варианта логотипа","Подробная презентация логотипа","Исходные файлы для веба и печати","Дизайн до 5 фирменных носителей","Оформление Instagram: посты, хайлайтс, сторис, иконки","Гайдбук по фирменному стилю и оформлению Instagram"]},
   {name:"Нейминг", price:"100 000 тенге", term:"10–14 дней",
@@ -369,10 +368,14 @@ const workCard = w => `
     <p class="mt-1 text-white/70">${w.desc}</p>
   </a>`;
 document.getElementById('grid').innerHTML = FEATURED.map(id => workCard(WORKS.find(w => w.img===id))).join('');
-const chip = "btn flex-auto text-center rounded-full px-6 py-3.5 text-base md:text-lg font-medium border ";
-document.getElementById('filters').innerHTML = CATEGORIES.map((c,i) => i===0
-  ? `<span class="${chip}bg-white text-ink border-white" aria-current="true">${c}</span>`
-  : `<a href="all-projects.html?cat=${encodeURIComponent(c)}" class="${chip}border-white/30 text-white hover:bg-white hover:text-ink">${c}</a>`).join('');
+const SHOW_FILTERS = false; // категории скрыты на время: поставьте true, когда проектов станет больше
+const filtersEl = document.getElementById('filters');
+if (SHOW_FILTERS) {
+  const chip = "btn flex-auto text-center rounded-full px-6 py-3.5 text-base md:text-lg font-medium border ";
+  filtersEl.innerHTML = CATEGORIES.map((c,i) => i===0
+    ? `<span class="${chip}bg-white text-ink border-white" aria-current="true">${c}</span>`
+    : `<a href="all-projects.html?cat=${encodeURIComponent(c)}" class="${chip}border-white/30 text-white hover:bg-white hover:text-ink">${c}</a>`).join('');
+} else { filtersEl.remove(); }
 
 // Этапы
 document.getElementById('steps').innerHTML = STEPS.map((s,i)=>`
@@ -434,7 +437,8 @@ orderForm.addEventListener('submit', e => {
   e.preventDefault();
   const n = fName.value.trim();
   if(n.length < 2){ fldName.classList.add('err'); fName.focus(); return; }
-  const svc = orderForm.querySelector('input[name="service"]:checked').value;
+  const picked = Array.from(orderForm.querySelectorAll('input[name="service"]:checked')).map(i => i.value);
+  const svc = picked.length ? picked.join(', ') : 'пока не знаю';
   const t = document.getElementById('f-text').value.trim() || "—";
   window.open(wa(`Здравствуйте! Меня зовут ${n}.\nУслуга: ${svc}.\nЗадача: ${t}`), '_blank');
 });
@@ -449,7 +453,8 @@ function typo(){
   nodes.forEach(n => {
     n.nodeValue = n.nodeValue
       .replace(/(\S+)([ \t\n]+)/g, (m, w, sp) => SHORT.has(w.toLowerCase().replace(/^[«"(]+/, '')) ? w + '\u00A0' : m)
-      .replace(/(\d) (?=\d{3}(?!\d))/g, '$1\u00A0');
+      .replace(/(\d) (?=\d{3}(?!\d))/g, '$1\u00A0')
+      .replace(/(\d) (?=[А-Яа-яЁёA-Za-z])/g, '$1\u00A0');
   });
 }
 typo();
