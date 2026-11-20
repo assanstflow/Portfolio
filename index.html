@@ -52,7 +52,7 @@ tailwind.config = { theme: { extend: {
 
 <!-- 1. ВЕРХНЯЯ СТРОКА -->
 <a href="#pricing" class="block bg-amber text-ink text-center text-sm font-medium py-2.5 px-4 hover:bg-white transition-colors">
-  Нужен логотип быстро? Тариф «Экспресс»: 3–5 рабочих дней, 50 000 тенге
+  Скидка 50% на все тарифы: «Экспресс» от 30 000 тенге, 3–5 рабочих дней
 </a>
 
 <!-- 2. ШАПКА -->
@@ -250,6 +250,7 @@ tailwind.config = { theme: { extend: {
 <script>
 /* ===== НАСТРОЙКИ ===== */
 const WHATSAPP = "77071591625";
+const DISCOUNT = 0.5; // скидка на все тарифы (0.5 = 50%); поставьте 0, чтобы убрать скидку
 
 const CATEGORIES = ["Все","Еда и напитки","Сервис и услуги","Строительство","Техника и производство","Красота и здоровье","Спорт"];
 
@@ -289,19 +290,19 @@ const STEPS = [
 ];
 
 const PLANS = [ // name, price, term, pay, note, items
-  {name:"Экспресс", price:"50 000 тенге", term:"3–5 рабочих дней",
+  {name:"Экспресс", price:"60 000 тенге", term:"3–5 рабочих дней",
    note:"Для тех, кому нравятся мои работы, но «Стандарт» не по карману",
    items:["1 вариант логотипа без правок","Подробная презентация логотипа","Исходные файлы для веба и печати"]},
-  {name:"Эконом", price:"75 000 тенге", term:"7–10 рабочих дней после аванса",
+  {name:"Эконом", price:"80 000 тенге", term:"7–10 рабочих дней после аванса",
    items:["2 варианта логотипа в разной стилистике","Презентация с визуализацией на носителях","1 бесплатный круг правок","Исходные файлы для веба и печати"]},
-  {name:"Стандарт", price:"100 000 тенге", term:"10–14 рабочих дней", hit:true,
+  {name:"Стандарт", price:"120 000 тенге", term:"10–14 рабочих дней", hit:true,
    items:["3 варианта логотипа в разной стилистике","Подробная презентация логотипа","2 бесплатных круга правок","Исходные файлы для веба и печати","Логобук: руководство по использованию логотипа"]},
-  {name:"Бизнес", price:"150 000 тенге", term:"14–21 рабочий день",
+  {name:"Бизнес", price:"180 000 тенге", term:"14–21 рабочий день",
    items:["3 варианта логотипа в разной стилистике","Подробная презентация логотипа","3 бесплатных круга правок","Исходные файлы для веба и печати","Логобук","На выбор: оформление Instagram (9 постов, 4 шаблона, 3 обложки сторис, 5 иконок хайлайтс) или дизайн до 3 носителей (визитка, бланк, конверт и др.)"]},
-  {name:"Брендинг", price:"250 000 тенге", term:"21–30 рабочих дней",
+  {name:"Брендинг", price:"300 000 тенге", term:"21–30 рабочих дней",
    note:"Бренд создаётся для людей:<br>аудитория — ядро вашего бренда",
    items:["Платформа бренда: аудит, преимущества продукта, ценности, характер и голос, суть бренда","3 уникальных варианта логотипа","Подробная презентация логотипа","Исходные файлы для веба и печати","Дизайн до 5 фирменных носителей","Оформление Instagram: посты, хайлайтс, сторис, иконки","Гайдбук по фирменному стилю и оформлению Instagram"]},
-  {name:"Нейминг", price:"100 000 тенге", term:"10–14 дней",
+  {name:"Нейминг", price:"120 000 тенге", term:"10–14 дней",
    note:"Звучные, запоминающиеся и точные названия для брендов",
    items:["Анализ конкурентов и окружения","Концепции и тестовые названия","Генерация названий и отсев по критериям","Проверка поисковой выдачи","Презентация 10 названий и выбор приоритетного","Проверка возможности регистрации товарного знака по открытым базам"]}
 ];
@@ -385,6 +386,9 @@ document.getElementById('steps').innerHTML = STEPS.map((s,i)=>`
   </li>`).join('');
 
 // Тарифы
+const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0');
+const listPrice = p => parseInt(p.price.replace(/\D/g, ''), 10);
+const salePrice = p => Math.round(listPrice(p) * (1 - DISCOUNT));
 const TENGE = '<svg role="img" aria-label="тенге" class="inline-block" style="vertical-align:baseline;height:.7em;width:.608em;margin-left:.2em" viewBox="0 0 66 76" fill="currentColor"><rect width="66" height="13"/><rect y="21" width="66" height="13"/><rect x="23" y="21" width="20" height="55"/></svg>';
 document.getElementById('plans').innerHTML = PLANS.map(p=>`
   <article class="tile rounded-[15px] p-7 flex flex-col ${p.hit?'bg-ink text-white':'bg-white border border-ink/10'}">
@@ -392,8 +396,11 @@ document.getElementById('plans').innerHTML = PLANS.map(p=>`
     <p class="mt-3 text-sm ${p.hit?'text-white/70':'text-ink/65'}">Срок: ${p.term}</p>
     ${p.note?`<p class="mt-4 text-sm italic ${p.hit?'text-white/80':'text-ink/70'}">${p.note}</p>`:''}
     <ul class="mt-5 space-y-2 text-sm flex-1">${p.items.map(i=>`<li class="flex gap-2"><span class="${p.hit?'text-amber':'text-clay'} font-bold">✓</span><span>${i}</span></li>`).join('')}</ul>
-    <p class="mt-8 font-bold leading-none text-3xl lg:text-4xl">${p.price.replace(/\s*тенге$/,'').replace(/\s/g,'\u00A0')}${TENGE}</p>
-    <a target="_blank" rel="noopener" href="${wa(`Здравствуйте! Хочу заказать тариф «${p.name}» (${p.price}, срок: ${p.term}).`)}"
+    <div class="mt-8">
+      ${DISCOUNT?`<p class="flex items-center gap-2 text-base ${p.hit?'text-white/60':'text-ink/50'}"><span class="line-through">${fmt(listPrice(p))}${TENGE}</span><span class="rounded-full bg-amber text-ink text-xs font-semibold px-2.5 py-1">−${Math.round(DISCOUNT*100)}%</span></p>`:''}
+      <p class="mt-1 font-bold leading-none text-3xl lg:text-4xl">${fmt(DISCOUNT?salePrice(p):listPrice(p))}${TENGE}</p>
+    </div>
+    <a target="_blank" rel="noopener" href="${wa(`Здравствуйте! Хочу заказать тариф «${p.name}» (${fmt(DISCOUNT?salePrice(p):listPrice(p)).replace(/\u00A0/g,' ')} тенге${DISCOUNT?' со скидкой '+Math.round(DISCOUNT*100)+'%':''}, срок: ${p.term}).`)}"
        class="btn mt-5 text-center rounded-full px-6 py-3.5 font-medium ${p.hit?'bg-amber text-ink hover:bg-white':'bg-ink text-white hover:bg-moss'}">Выбрать</a>
   </article>`).join('');
 
